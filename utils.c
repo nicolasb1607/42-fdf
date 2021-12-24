@@ -1,17 +1,25 @@
 #include "mlx.h"
 #include "ft_fdf.h"
+#include <stdio.h>
 
-int ft_trace_line(t_app *app, int x, int y)
+int ft_trace_line(t_app *app, int xa, int ya, int xb, int yb)
 {
-	int i;
-	int j; 
+	float xd;
+	float yd;
+	float m;
+	int y;
 
-	i = 200;
-	j = 500;
-	while (i < x)
+	xd = xa - xb;
+	yd = ya - yb;
+	m = yd / xd;
+
+	while (xa <= xb)
 	{
-		mlx_pixel_put((*app).init, (*app).win, i, j , 0x00FFFFFF);
-		i++;
+		y = m * xa + ya;
+		printf("xa : %d, y = %d\n", xa, y);
+		mlx_pixel_put(app->init, app->win, xa, y, 0x00FFFFFF);
+		xa++;
 	}
+
 	return 0;
 }

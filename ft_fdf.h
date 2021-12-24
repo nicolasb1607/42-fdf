@@ -8,6 +8,6 @@ typedef struct s_app
     void    *win;
 }   t_app;
 
-int ft_trace_line(t_app *app, int x, int y);
+int ft_trace_line(t_app *app, int xa, int ya, int xb, int yb);
 
 #endif
