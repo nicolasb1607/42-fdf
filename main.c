@@ -1,8 +1,9 @@
+#include "./ft_fdf.h"
 #include "mlx.h"
 #include "mlx_int.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "ft_fdf.h"
+
 
 int ft_get_keycode(int keycode)
 {
@@ -16,26 +17,27 @@ int ft_get_mouse_spot(int button, int x, int y)
     return (0);
 }
 
-int ft_close_program(t_app *mlx)
+int ft_close_program(t_app *app)
 {
     printf("Exiting the program");
-    mlx_destroy_window((*mlx).init,(*mlx).win);
+    mlx_destroy_window((*app).init,(*app).win);
+	exit(0);
     return(1);
 }
 
 
 int main()
 {
-    t_app *app;
+    t_app app;
+	int x = 500;
+	int y = 450;
 
-    //initialise the application
-    (*app).init = mlx_init();
-    //link the newly created window to the app
-    (*app).win= mlx_new_window((*app).init, 1000, 850, "FdF");
-    mlx_key_hook((*app).win, ft_get_keycode, app);
-    printf("bf hook\n");
-    mlx_hook((*app).win, 17, 0, ft_close_program, app);
-    printf("after hook\n");
-    mlx_loop((*app).init);
+    app.init = mlx_init();
+
+    app.win= mlx_new_window(app.init, 1000, 850, "Fils de Fer");
+    mlx_key_hook(app.win, ft_get_keycode, &app);
+	ft_trace_line(&app, x, y);
+    mlx_hook(app.win, 17, 0, ft_close_program, &app);
+    mlx_loop(app.init);
     return (0);
 }

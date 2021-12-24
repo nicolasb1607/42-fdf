@@ -1,5 +1,5 @@
 #ifndef FT_FDF_H
-#define FT_FDF_H
+# define FT_FDF_H
 
 
 typedef struct s_app
@@ -8,5 +8,6 @@ typedef struct s_app
     void    *win;
 }   t_app;
 
+int ft_trace_line(t_app *app, int x, int y);
 
 #endif
