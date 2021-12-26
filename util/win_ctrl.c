@@ -1,4 +1,4 @@
-#include "ft_fdf.h"
+#include "../includes/ft_fdf.h"
 
 int ft_get_keycode(int keycode)
 {
