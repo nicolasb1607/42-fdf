@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nicolas/Documents/fdf'
+gcc -Wall -Wextra -Werror   -c -o main/main.o main/main.c
+gcc -Wall -Wextra -Werror   -c -o util/line_drawing.o util/line_drawing.c
+gcc -Wall -Wextra -Werror   -c -o util/win_ctrl.o util/win_ctrl.c
+gcc -Wall -Wextra -Werror main/main.o util/line_drawing.o util/win_ctrl.o -o fdf -I ./minilibx-linux/ -lmlx_Linux -lXext -lX11 
+make: Leaving directory '/home/nicolas/Documents/fdf'
+ 
