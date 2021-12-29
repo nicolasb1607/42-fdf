@@ -1,5 +1,6 @@
 #include "../includes/ft_fdf.h"
 
+
 int ft_trace_line(t_app *app, int xa, int ya, int xb, int yb)
 {
 	float xd;

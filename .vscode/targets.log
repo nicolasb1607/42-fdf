@@ -1,296 +1,247 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 4.3
+# GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Dec 28 10:04:32 2021
+# Make data base, printed on Wed Dec 29 15:39:11 2021
 
 # Variables
 
-# environment
-GDK_BACKEND = x11
-# environment
-LC_ALL = C
-# environment
-GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-SSH_AGENT_LAUNCHER = gnome-keyring
-# environment
-SNAP_INSTANCE_KEY = 
-# environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e3cebc66-4713-4d16-8a7d-89a169c57040.sock
-# environment
-LC_NAME = fr_FR.UTF-8
-# environment
-LC_NUMERIC = fr_FR.UTF-8
-# environment
-VSCODE_CWD = /home/nicolas
-# environment
-LC_ADDRESS = fr_FR.UTF-8
-# default
-MAKE_COMMAND := make
-# environment
-QT_ACCESSIBILITY = 1
 # automatic
-@D = $(patsubst %/,%,$(dir $@))
-# environment
-SNAP_INSTANCE_NAME = code
-# environment
-GDK_PIXBUF_MODULEDIR = /snap/code/85/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
-# environment
-PWD = /home/nicolas/Documents/fdf
+<D = $(patsubst %/,%,$(dir $<))
 # automatic
-%D = $(patsubst %/,%,$(dir $%))
+?F = $(notdir $?)
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-XDG_DATA_DIRS = /usr/local/share/:/usr/share/:/var/lib/snapd/desktop
-# environment
-OLDPWD = /home/nicolas
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
-# environment
-VSCODE_LOG_STACK = false
-# automatic
-%F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
-# environment
-LANG = C
-# environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.ERK4E1
-# default
-.LOADED := 
-# default
-.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# makefile
-MAKEFLAGS = pqrR
-# makefile
-CURDIR := /home/nicolas/Documents/fdf
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
-# makefile (from 'Makefile', line 4)
-SRCS = ./main/main.c ./util/line_drawing.c ./util/win_ctrl.c 
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-MFLAGS = -pqrR
-# environment
-SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
 # environment
-WAYLAND_DISPLAY = wayland-0
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
+XDG_SESSION_CLASS = user
 # environment
-VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=cb0b9051-a21a-4c1d-b066-7b1e0c461400&iid=cb0b9051-a21a-4c1d-b066-7b1e0c461400&sid=cb0b9051-a21a-4c1d-b066-7b1e0c461400","uploadToServer":true}
+XDG_SESSION_TYPE = x11
 # environment
-XDG_SESSION_DESKTOP = ubuntu
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
-# environment
-SNAP_REEXEC = 
-# automatic
-@F = $(notdir $@)
-# environment
-ZSH = /home/nicolas/.oh-my-zsh
-# environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 4844
-# environment
-XDG_SESSION_TYPE = wayland
+VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 8)
-INCLUDES = ./minilibx-linux/ -lmlx_Linux -lXext -lX11 
-# environment
-SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2020,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2020
+INCLUDES = ./minilibx/ -lmlx_Linux -lXext -lX11 
 # automatic
-*F = $(notdir $*)
+@D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_DESKTOP = code-url-handler.desktop
+XAUTHORITY = /mnt/nfs/homes/nburat-d/.Xauthority
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
-# automatic
-<D = $(patsubst %/,%,$(dir $<))
-# makefile (from 'Makefile', line 3)
-EXEC = fdf
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /mnt/nfs/homes/nburat-d/Documents/fdf
+# makefile
+SHELL = /bin/sh
+# environment
+GDM_LANG = en
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-BREAKPAD_DUMP_LOCATION = /home/nicolas/.config/Code/exthost Crash Reports
-# default
-MAKE_HOST := x86_64-pc-linux-gnu
+_ = /usr/share/code/code
+# makefile (from 'Makefile', line 2)
+CFLAGS = -Wall -Wextra -Werror
+# environment
+JOURNAL_STREAM = 9:4960184
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/nburat-d/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/40568/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 10)
 OBJS = ${SRCS:.c=.o}
 # environment
-GNOME_DESKTOP_SESSION_ID = this-is-deprecated
-# makefile
-SHELL = /bin/sh
+MANAGERPID = 1756444
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/40568/vscode-ipc-4dba87f2-da6b-4bea-8525-42732e02e565.sock
+# environment
+VSCODE_CWD = /mnt/nfs/homes/nburat-d
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session15
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_40568_MVmv3f
 # default
-MAKECMDGOALS := all
+MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-XMODIFIERS = @im=ibus
+PATH = /mnt/nfs/homes/nburat-d/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+GPG_AGENT_INFO = /run/user/40568/gnupg/S.gpg-agent:0:1
 # environment
-SHLVL = 0
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+SESSION_MANAGER = local/e3r9p17.clusters.42paris.fr:@/tmp/.ICE-unix/1764755,unix/e3r9p17.clusters.42paris.fr:/tmp/.ICE-unix/1764755
+# environment
+XDG_RUNTIME_DIR = /run/user/40568
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=e04c7f51-6558-45a7-88e1-98d7e410145b&iid=e04c7f51-6558-45a7-88e1-98d7e410145b&sid=e04c7f51-6558-45a7-88e1-98d7e410145b","uploadToServer":true}
+# environment
+INVOCATION_ID = a732eb57c29c402dabe65fab4df5ddc6
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/nburat-d
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/40568/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1780356
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /mnt/nfs/homes/nburat-d/Documents/fdf
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1764718
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /mnt/nfs/homes/nburat-d
+# environment
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/nburat-d/.config/Code/CachedData/6cba118ac49a1b88332f312a8f67186f7f3c1643
+# environment
+LOGNAME = nburat-d
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+ZSH = /mnt/nfs/homes/nburat-d/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
-# environment
-SNAP_COOKIE = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
-# environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # default
-MAKEFILES := 
-# environment
-LC_MONETARY = fr_FR.UTF-8
-# automatic
-^F = $(notdir $^)
-# environment
-SNAP_USER_COMMON = /home/nicolas/snap/code/common
-# environment
-LC_TIME = fr_FR.UTF-8
-# environment
-SNAP = /snap/code/85
-# environment
-INVOCATION_ID = d85379d5c24d48c985c5fd1b01738bb1
-# environment
-SNAP_REVISION = 85
-# environment
-SNAP_REAL_HOME = /home/nicolas
-# environment
-VSCODE_LOG_NATIVE = false
-# environment
-USERNAME = nicolas
-# environment
-GNOME_SETUP_DISPLAY = :1
-# environment
-LC_TELEPHONE = fr_FR.UTF-8
-# automatic
-?F = $(notdir $?)
-# environment
-XDG_CURRENT_DESKTOP = Unity
-# environment
-LS_COLORS = 
-# automatic
-+F = $(notdir $+)
-# environment
-LESS = -R
-# environment
-DESKTOP_SESSION = ubuntu
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# 'override' directive
-GNUMAKEFLAGS := 
-# environment
-LOGNAME = nicolas
-# environment
-GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
-# environment
-SNAP_ARCH = amd64
-# makefile
-.DEFAULT_GOAL := all
-# environment
-SYSTEMD_EXEC_PID = 2038
-# environment
-DISPLAY = :0
-# environment
-USER = nicolas
-# environment
-GTK_MODULES = gail:atk-bridge
-# default
-MAKE_VERSION := 4.3
-# environment
-DISABLE_WAYLAND = 1
-# environment
-SNAP_DATA = /var/snap/code/85
-# environment
-SNAP_CONTEXT = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
-# environment
-MANAGERPID = 1810
-# environment
-LC_MEASUREMENT = fr_FR.UTF-8
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4777
-# environment
-PAGER = less
-# environment
-_ = /snap/code/85/usr/share/code/code
-# environment
-LC_PAPER = fr_FR.UTF-8
-# environment
-XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'Makefile', line 2)
-CFLAGS = -Wall -Wextra -Werror
-# environment
-GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
-# environment
-JOURNAL_STREAM = 8:25493
-# environment
-XDG_SESSION_CLASS = user
-# environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
-# environment
-HOME = /home/nicolas
+MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 4)
+SRCS = ./main/main.c ./util/line_drawing.c ./util/win_ctrl.c 
 # environment
-ELECTRON_RUN_AS_NODE = 1
-# environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-0ed59228-1.63.2-main.sock
-# environment
-SNAP_NAME = code
-# environment
-GSETTINGS_SCHEMA_DIR = /snap/code/85/usr/share/glib-2.0/schemas
-# default
-.RECIPEPREFIX := 
-# automatic
-<F = $(notdir $<)
-# environment
-SNAP_VERSION = 899d46d8
-# default
-SUFFIXES := 
-# environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-SNAP_COMMON = /var/snap/code/common
-# default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+SHLVL = 0
 # makefile (from 'Makefile', line 1)
 CC = gcc
 # environment
-SNAP_USER_DATA = /home/nicolas/snap/code/85
+IM_CONFIG_PHASE = 1
+# makefile (from 'Makefile', line 3)
+EXEC = fdf
+# default
+MAKE_VERSION := 4.2.1
 # environment
-XDG_MENU_PREFIX = gnome-
+USER = nburat-d
+# makefile
+.DEFAULT_GOAL := all
 # environment
-GDMSESSION = ubuntu
+XDG_CURRENT_DESKTOP = Unity
 # environment
-LC_IDENTIFICATION = fr_FR.UTF-8
+LIBVIRT_DEFAULT_URI = qemu:///system
 # environment
-SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/nfs/homes/nburat-d
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/40568/vscode-2ba08e64-1.61.2-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+BREAKPAD_DUMP_LOCATION = /mnt/nfs/homes/nburat-d/.config/Code/exthost Crash Reports
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+DOCKER_HOST = unix:///run/user/40568/docker.sock
+# environment
+VSCODE_PID = 1780356
 # variable set hash-table stats:
- 
-# Load=139/1024=14%, Rehash=0, Collisions=11/173=6%
+# Load=115/1024=11%, Rehash=0, Collisions=10/144=7%
 
 # Pattern-specific Variable Values
 
@@ -298,9 +249,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 66309, inode 3147033): 12 files, no impossibilities.
+# . (device 58, inode 64586382): 10 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -309,50 +260,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Files
 
 # Not a target:
-Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2021-12-26 18:53:41.420984398
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-main/main.o:
-#  Implicit rule search has been done.
-#  Last modified 2021-12-27 16:26:28.321430127
-#  File has been updated.
-#  Successfully updated.
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	rm -f $(OBJS)
-
-re: fclean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
-	all
-
-# Not a target:
 util/win_ctrl.o:
-#  Implicit rule search has been done.
-#  Last modified 2021-12-27 16:24:26.986453798
-#  File has been updated.
-#  Successfully updated.
-
-fdf: main/main.o util/line_drawing.o util/win_ctrl.o
-#  Implicit rule search has not been done.
-#  Last modified 2021-12-27 16:26:28.353436645
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 15):
-	$(CC) $(CFLAGS) $^ -o $@ -I $(INCLUDES)
-
-# Not a target:
-.DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -361,15 +269,7 @@ all: fdf
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
-
-fclean: clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-	rm -f $(EXEC)
 
 .o: .c
 #  Implicit rule search has not been done.
@@ -378,18 +278,67 @@ fclean: clean
 #  recipe to execute (from 'Makefile', line 18):
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
 
+ 
+make: *** No rule to make target 'main/main.o', needed by 'fdf'.  Stop.
+ 
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-12-29 14:45:43.201942966
+#  File has been updated.
+#  Successfully updated.
+
 # Not a target:
 .c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	rm -f $(EXEC)
+
+# Not a target:
+main/main.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+	all
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 21):
+	rm -f $(OBJS)
+
 # Not a target:
 util/line_drawing.o:
-#  Implicit rule search has been done.
-#  Last modified 2021-12-27 16:02:54.819221682
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fdf: main/main.o util/line_drawing.o util/win_ctrl.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	$(CC) $(CFLAGS) $^ -o $@ -I $(INCLUDES)
 
 # files hash-table stats:
 # Load=13/1024=1%, Rehash=0, Collisions=0/32=0%
@@ -399,12 +348,12 @@ util/line_drawing.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 202 B / avg = 8 B
-# current buf: size = 8162 B / used = 202 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 201 B / avg = 8 B
+# current buf: size = 8162 B / used = 201 B / count = 24 / avg = 8 B
 
-# strcache performance: lookups = 40 / hit rate = 37%
+# strcache performance: lookups = 38 / hit rate = 36%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/40=0%
-# Finished Make data base on Tue Dec 28 10:04:32 2021
+# Load=24/8192=0%, Rehash=0, Collisions=1/38=3%
+# Finished Make data base on Wed Dec 29 15:39:11 2021
 
  
