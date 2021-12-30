@@ -1,4 +1,5 @@
-#include "../includes/ft_fdf.h"
+#include "../ft_fdf.h"
+#include <mlx.h>
 
 int ft_get_keycode(int keycode)
 {

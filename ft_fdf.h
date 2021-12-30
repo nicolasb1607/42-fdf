@@ -3,7 +3,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "./mlx.h"
+
 
 # define WINDOW_HEIGHT 300
 # define WINDOW_WIDTH 500
