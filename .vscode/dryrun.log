@@ -1,8 +1,8 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/nicolas/Documents/fdf'
 gcc -Wall -Wextra -Werror   -c -o main.o main.c
 gcc -Wall -Wextra -Werror   -c -o util/win_ctrl.o util/win_ctrl.c
 gcc -Wall -Wextra -Werror   -c -o util/drawing.o util/drawing.c
-gcc -Wall -Wextra -Werror main.o util/win_ctrl.o util/drawing.o -o fdf  -I -lmlx -lXext -lX11
+gcc -Wall -Wextra -Werror main.o util/win_ctrl.o util/drawing.o -o fdf -lmlx_Linux -lXext -lX11 -I ./includes/ 
 make: Leaving directory '/home/nicolas/Documents/fdf'
  

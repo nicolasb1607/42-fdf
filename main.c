@@ -1,5 +1,4 @@
-#include "ft_fdf.h"
-#include <mlx.h>
+#include "includes/ft_fdf.h"
 
 int main()
 {

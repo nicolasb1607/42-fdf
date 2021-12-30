@@ -1,5 +1,5 @@
-#include "../ft_fdf.h"
-#include <mlx.h>
+#include "../includes/ft_fdf.h"
+
 
 void	render_background(t_img *img, int color)
 {

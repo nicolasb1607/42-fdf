@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
+ 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec 30 10:26:29 2021
+# Make data base, printed on Thu Dec 30 11:17:02 2021
 
 # Variables
 
@@ -23,7 +25,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-96a84bfd-58e2-472a-8930-4a404aa31d41.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c86b29f7-5830-49ef-98ce-386e4ea4a1d3.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -109,7 +111,7 @@ ZSH = /home/nicolas/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3843
+VSCODE_PID = 10279
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -229,7 +231,7 @@ MANAGERPID = 1863
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3798
+GIO_LAUNCHED_DESKTOP_FILE_PID = 10230
 # environment
 PAGER = less
 # environment
@@ -290,9 +292,6 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
 # Load=139/1024=14%, Rehash=0, Collisions=11/173=6%
- 
-make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
- 
 
 # Pattern-specific Variable Values
 
@@ -319,23 +318,23 @@ util/drawing.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-29 19:13:06.045530429
+#  Last modified 2021-12-30 11:16:26.407817654
 #  File has been updated.
 #  Successfully updated.
 
 clean:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 21):
 	rm -f $(OBJS)
 
-re: fclean
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
-	all
 
 # Not a target:
 util/win_ctrl.o:
@@ -345,10 +344,11 @@ util/win_ctrl.o:
 
 fdf: main.o util/win_ctrl.o util/drawing.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+ 
+#  Last modified 2021-12-30 11:16:39.275878088
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 15):
-	$(CC) $(CFLAGS) $^ -o $@  -I -lmlx -lXext -lX11
+	$(CC) $(CFLAGS) $^ -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 # Not a target:
 .DEFAULT:
@@ -357,14 +357,16 @@ fdf: main.o util/win_ctrl.o util/drawing.o
 #  File has not been updated.
 
 all: fdf
+#  Phony target (prerequisite of .PHONY).
 #  Command line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 
 fclean: clean
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
 	rm -f $(EXEC)
@@ -380,7 +382,7 @@ main.o:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 18):
-	$(CC) $(CFLAGS) -lmlx -lXext -lX11 -c $< -o $@ -I -lmlx -lXext -lX11
+	$(CC) $(CFLAGS) -lmlx -lXext -lX11 -c $< -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 # Not a target:
 .c:
@@ -388,20 +390,31 @@ main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+spe: all clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: all clean fclean re spe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/32=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/42=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 176 B / avg = 7 B
-# current buf: size = 8162 B / used = 176 B / count = 23 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 178 B / avg = 7 B
+# current buf: size = 8162 B / used = 178 B / count = 24 / avg = 7 B
 
-# strcache performance: lookups = 37 / hit rate = 37%
+# strcache performance: lookups = 49 / hit rate = 51%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=0/37=0%
-# Finished Make data base on Thu Dec 30 10:26:29 2021
+# Load=24/8192=0%, Rehash=0, Collisions=0/49=0%
+# Finished Make data base on Thu Dec 30 11:17:02 2021
 
  

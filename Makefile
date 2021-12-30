@@ -12,10 +12,10 @@ OBJS = ${SRCS:.c=.o}
 all : $(EXEC)
 
 $(EXEC) : $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@  -I -lmlx -lXext -lX11
+	$(CC) $(CFLAGS) $^ -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 .o : .c
-	$(CC) $(CFLAGS) -lmlx -lXext -lX11 -c $< -o $@ -I -lmlx -lXext -lX11
+	$(CC) $(CFLAGS) -lmlx -lXext -lX11 -c $< -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 clean : 
 	rm -f $(OBJS)
@@ -23,5 +23,8 @@ clean :
 fclean : clean
 	rm -f $(EXEC)
 
-re : fclean
-	all
+re : fclean all
+
+spe : all clean
+
+.PHONY : all clean fclean re spe
