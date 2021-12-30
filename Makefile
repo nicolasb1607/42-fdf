@@ -4,6 +4,7 @@ EXEC = fdf
 SRCS = ./main.c \
 	./util/win_ctrl.c \
 	./util/drawing.c \
+	./util/line_drawing.c \
 
 INCLUDES = ./includes/
 

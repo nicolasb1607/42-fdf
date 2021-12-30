@@ -1,7 +1,6 @@
 #include "../includes/ft_fdf.h"
 
-
-int ft_trace_line(t_app *app, int xa, int ya, int xb, int yb)
+int ft_trace_line(t_img *img, int xa, int ya, int xb, int yb)
 {
 	float xd;
 	float yd;
@@ -13,19 +12,19 @@ int ft_trace_line(t_app *app, int xa, int ya, int xb, int yb)
 	m = yd / xd;
 	if (xa > xb)
 	{
-		while (xb <= xa)
+		while (xa > xb)
 		{
 			y = m * xb + yb + 0.5;
-			if(app->win != NULL)
-				mlx_pixel_put(app->init, app->win, xb, y, 0x00FFFFFF);
-			xb++;
+			img_pix_put(img, xb++, y, 0x00000000);
 		}
 	}
-	while (xa <= xb)
+	else if (xa < xb)
 	{
-		y = m * xa + ya + 0.5;
-		mlx_pixel_put(app->init, app->win, xa, y, 0x00FFFFFF);
-		xa++;
+		while (xa <= xb)
+		{
+			y = m * xa + ya + 0.5;
+			img_pix_put(img, xa++, y, 0x00000000);
+		}
 	}
 	return (0);
 }

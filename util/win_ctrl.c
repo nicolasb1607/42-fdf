@@ -1,10 +1,14 @@
 #include "../includes/ft_fdf.h"
 
 
-int ft_get_keycode(int keycode)
+int handle_keypress(int keysym, t_app *app)
 {
-    printf("key pressed : %d \n", keycode);
-    return(0);
+	if(keysym == XK_Escape)
+	{
+		mlx_destroy_window(app->init, app->win);
+		app->win = NULL;
+	}
+	return (0);
 }
 
 int ft_get_mouse_spot(int button, int x, int y, t_point *point)
@@ -19,10 +23,7 @@ int ft_close_program(t_app *app)
 {
     printf("Exiting the program");
     mlx_destroy_window((*app).init,(*app).win);
+	app->win = NULL;
     return(0);
 }
 
-int	ft_no_event_handler()
-{
-	return (0);
-}

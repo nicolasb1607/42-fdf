@@ -8,7 +8,7 @@ make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec 30 11:17:02 2021
+# Make data base, printed on Thu Dec 30 14:10:22 2021
 
 # Variables
 
@@ -83,7 +83,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # makefile (from 'Makefile', line 4)
-SRCS = ./main.c ./util/win_ctrl.c ./util/drawing.c 
+SRCS = ./main.c ./util/win_ctrl.c ./util/drawing.c ./util/line_drawing.c 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -118,7 +118,7 @@ XDG_SESSION_TYPE = wayland
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 9)
 INCLUDES = ./includes/
 # environment
 SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2008,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2008
@@ -138,7 +138,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 BREAKPAD_DUMP_LOCATION = /home/nicolas/.config/Code/exthost Crash Reports
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 10)
+# makefile (from 'Makefile', line 11)
 OBJS = ${SRCS:.c=.o}
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -296,6 +296,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
+ 
 
 # Directories
 
@@ -318,7 +319,7 @@ util/drawing.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-30 11:16:26.407817654
+#  Last modified 2021-12-30 14:09:47.963264127
 #  File has been updated.
 #  Successfully updated.
 
@@ -327,7 +328,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
+#  recipe to execute (from 'Makefile', line 22):
 	rm -f $(OBJS)
 
 re: fclean all
@@ -342,12 +343,11 @@ util/win_ctrl.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-fdf: main.o util/win_ctrl.o util/drawing.o
+fdf: main.o util/win_ctrl.o util/drawing.o util/line_drawing.o
 #  Implicit rule search has not been done.
- 
-#  Last modified 2021-12-30 11:16:39.275878088
+#  Last modified 2021-12-30 14:09:53.259289091
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
+#  recipe to execute (from 'Makefile', line 16):
 	$(CC) $(CFLAGS) $^ -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 # Not a target:
@@ -368,7 +368,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
+#  recipe to execute (from 'Makefile', line 25):
 	rm -f $(EXEC)
 
 # Not a target:
@@ -381,7 +381,7 @@ main.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
+#  recipe to execute (from 'Makefile', line 19):
 	$(CC) $(CFLAGS) -lmlx -lXext -lX11 -c $< -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 # Not a target:
@@ -396,25 +396,31 @@ spe: all clean
 #  File does not exist.
 #  File has not been updated.
 
+# Not a target:
+util/line_drawing.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .PHONY: all clean fclean re spe
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/42=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/44=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 178 B / avg = 7 B
-# current buf: size = 8162 B / used = 178 B / count = 24 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 25 / storage = 198 B / avg = 7 B
+# current buf: size = 8162 B / used = 198 B / count = 25 / avg = 7 B
 
-# strcache performance: lookups = 49 / hit rate = 51%
+# strcache performance: lookups = 50 / hit rate = 50%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=0/49=0%
-# Finished Make data base on Thu Dec 30 11:17:02 2021
+# Load=25/8192=0%, Rehash=0, Collisions=0/50=0%
+# Finished Make data base on Thu Dec 30 14:10:22 2021
 
  
