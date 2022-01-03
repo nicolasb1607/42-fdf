@@ -2,12 +2,7 @@
 
 /*
 
-- Determiner le nombre de lignes 
-- Determiner le nmobre de colonne
-
-- Creer une matrice contenant chacun des numeros de la map
-
-- Placer les points sur un plan avec une distance variable entre les points. 
+- Placer les points sur un plan avec une distance variable entre les points.
 (la distance variable permmettra d effectuer un zoom si necessaire)
 
 
@@ -16,11 +11,11 @@
 
 */
 
-
 int main()
 {
 	t_app app;
 
+	
 	app.init = mlx_init();
 	if (app.init == NULL)
 		return (0);
@@ -39,7 +34,6 @@ int main()
 
 	mlx_key_hook(app.win, &handle_keypress, &app);
 	mlx_hook(app.win, 17, 0, &ft_close_program, &app);
-
 
 	mlx_loop(app.init);
 
