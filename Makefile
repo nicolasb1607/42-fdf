@@ -3,8 +3,8 @@ CFLAGS = -Wall -Wextra -Werror
 EXEC = fdf
 SRCS = ./main.c \
 	./util/win_ctrl.c \
-	./util/drawing.c \
-	./util/line_drawing.c \
+	./util/draw.c \
+	./util/img_rendering.c \
 
 INCLUDES = ./includes/
 

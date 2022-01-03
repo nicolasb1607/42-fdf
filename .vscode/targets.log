@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
- 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec 30 14:10:22 2021
+# Make data base, printed on Sun Jan  2 16:02:54 2022
 
 # Variables
 
@@ -25,7 +23,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c86b29f7-5830-49ef-98ce-386e4ea4a1d3.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-30eac2d3-4755-48f7-92f7-e5664447c2e1.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -49,7 +47,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/nicolas/Documents/fdf
+PWD = /home/nicolas/Documents/github/fdf
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -69,7 +67,7 @@ VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/899d46d82c4c95423
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.VBCQE1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.JW3EF1
 # default
 .LOADED := 
 # default
@@ -77,13 +75,13 @@ XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.VBCQE1
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/nicolas/Documents/fdf
+CURDIR := /home/nicolas/Documents/github/fdf
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # makefile (from 'Makefile', line 4)
-SRCS = ./main.c ./util/win_ctrl.c ./util/drawing.c ./util/line_drawing.c 
+SRCS = ./main.c ./util/win_ctrl.c ./util/draw.c ./util/img_rendering.c 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -111,7 +109,7 @@ ZSH = /home/nicolas/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 10279
+VSCODE_PID = 3863
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -121,7 +119,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 9)
 INCLUDES = ./includes/
 # environment
-SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2008,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2008
+SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/1950,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/1950
 # automatic
 *F = $(notdir $*)
 # environment
@@ -173,7 +171,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/85
 # environment
-INVOCATION_ID = 1257fa4c0a664437ac3b539522f3c6e9
+INVOCATION_ID = 97fa3de81a3e4d82920e6bc524103528
 # environment
 SNAP_REVISION = 85
 # environment
@@ -211,7 +209,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2026
+SYSTEMD_EXEC_PID = 1968
 # environment
 DISPLAY = :0
 # environment
@@ -227,11 +225,11 @@ SNAP_DATA = /var/snap/code/85
 # environment
 SNAP_CONTEXT = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
 # environment
-MANAGERPID = 1863
+MANAGERPID = 1780
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 10230
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3818
 # environment
 PAGER = less
 # environment
@@ -245,7 +243,7 @@ CFLAGS = -Wall -Wextra -Werror
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:34330
+JOURNAL_STREAM = 8:29582
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -291,18 +289,20 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
+ 
+make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
+ 
 # Load=139/1024=14%, Rehash=0, Collisions=11/173=6%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
- 
 
 # Directories
 
-# . (device 66309, inode 3147033): 9 files, no impossibilities.
+# . (device 66309, inode 3147033): 8 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -311,15 +311,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Files
 
 # Not a target:
-util/drawing.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-30 14:09:47.963264127
+#  Last modified 2021-12-30 19:55:03.600238713
 #  File has been updated.
 #  Successfully updated.
 
@@ -330,6 +324,12 @@ clean:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 22):
 	rm -f $(OBJS)
+
+# Not a target:
+util/img_rendering.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -343,9 +343,9 @@ util/win_ctrl.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-fdf: main.o util/win_ctrl.o util/drawing.o util/line_drawing.o
+fdf: main.o util/win_ctrl.o util/draw.o util/img_rendering.o
 #  Implicit rule search has not been done.
-#  Last modified 2021-12-30 14:09:53.259289091
+#  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 16):
 	$(CC) $(CFLAGS) $^ -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
@@ -397,7 +397,7 @@ spe: all clean
 #  File has not been updated.
 
 # Not a target:
-util/line_drawing.o:
+util/draw.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -415,12 +415,12 @@ util/line_drawing.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 198 B / avg = 7 B
-# current buf: size = 8162 B / used = 198 B / count = 25 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 25 / storage = 196 B / avg = 7 B
+# current buf: size = 8162 B / used = 196 B / count = 25 / avg = 7 B
 
-# strcache performance: lookups = 50 / hit rate = 50%
+# strcache performance: lookups = 49 / hit rate = 48%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/50=0%
-# Finished Make data base on Thu Dec 30 14:10:22 2021
+# Load=25/8192=0%, Rehash=0, Collisions=0/49=0%
+# Finished Make data base on Sun Jan  2 16:02:55 2022
 
  

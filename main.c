@@ -1,5 +1,22 @@
 #include "includes/ft_fdf.h"
 
+/*
+
+- Determiner le nombre de lignes 
+- Determiner le nmobre de colonne
+
+- Creer une matrice contenant chacun des numeros de la map
+
+- Placer les points sur un plan avec une distance variable entre les points. 
+(la distance variable permmettra d effectuer un zoom si necessaire)
+
+
+
+
+
+*/
+
+
 int main()
 {
 	t_app app;

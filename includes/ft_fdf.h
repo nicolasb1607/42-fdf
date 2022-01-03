@@ -10,17 +10,12 @@
 # define WINDOW_WIDTH 1920/2
 # define WINDOW_HEIGHT 1080/2
 
-
-
-
-typedef struct s_rect
+typedef struct s_map
 {
-	int	x;
-	int	y;
-	int width;
-	int height;
-	int color;
-}	t_rect;
+	int	nb_row; 
+	int	nb_line; 
+	int	dist_point;
+}	t_map;
 
 typedef struct s_img
 {
@@ -52,7 +47,6 @@ int ft_close_program(t_app *app);
 int ft_trace_line(t_img *img, int xa, int ya, int xb, int yb);
 void	img_pix_put(t_img *img, int x, int y, int color);
 void	render_background(t_img *img, int color);
-int render_rect(t_img *img, t_rect rect);
 int	render(t_app *app);
 
 #endif

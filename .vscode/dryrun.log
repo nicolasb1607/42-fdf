@@ -1,10 +1,9 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/nicolas/Documents/fdf'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nicolas/Documents/github/fdf'
 gcc -Wall -Wextra -Werror   -c -o main.o main.c
 gcc -Wall -Wextra -Werror   -c -o util/win_ctrl.o util/win_ctrl.c
-gcc -Wall -Wextra -Werror   -c -o util/drawing.o util/drawing.c
- 
-gcc -Wall -Wextra -Werror   -c -o util/line_drawing.o util/line_drawing.c
-gcc -Wall -Wextra -Werror main.o util/win_ctrl.o util/drawing.o util/line_drawing.o -o fdf -lmlx_Linux -lXext -lX11 -I ./includes/ 
-make: Leaving directory '/home/nicolas/Documents/fdf'
+gcc -Wall -Wextra -Werror   -c -o util/draw.o util/draw.c
+gcc -Wall -Wextra -Werror   -c -o util/img_rendering.o util/img_rendering.c
+gcc -Wall -Wextra -Werror main.o util/win_ctrl.o util/draw.o util/img_rendering.o -o fdf -lmlx_Linux -lXext -lX11 -I ./includes/ 
+make: Leaving directory '/home/nicolas/Documents/github/fdf'
  
