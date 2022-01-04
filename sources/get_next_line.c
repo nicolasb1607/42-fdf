@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/09 13:34:42 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/03 17:36:22 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/ft_fdf.h"
 
 char	*get_line(char *save, char *line)
 {
@@ -64,7 +64,7 @@ char	*not_read_yet(char *save)
 	return (save);
 }
 
-char	*read_save(char *save, int fd)
+char	*read_save(char *save, int fd, int BUFFER_SIZE)
 {
 	char	*buff;
 	int		bytesread;
@@ -96,33 +96,16 @@ char	*get_next_line(int fd)
 {
 	static char	*save[1024];
 	char		*line;
+	int BUFFER_SIZE; 
 
+	BUFFER_SIZE = 20;
 	line = NULL;
 	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!save[fd])
 		save[fd] = ft_strdup("");
-	save[fd] = read_save(save[fd], fd);
+	save[fd] = read_save(save[fd], fd, BUFFER_SIZE);
 	line = get_line(save[fd], line);
 	save[fd] = not_read_yet(save[fd]);
 	return (line);
 }
-
-/*
-#include <stdio.h>
-#include <fcntl.h>
-
-int main()
-{
-
-	int fd;
-	char *str;
-
-	fd = open("./text.txt", O_RDONLY);
-	do
-	{
-		str = get_next_line(fd);
-		printf("%s", str);
-		free(str);
-	} while (str);
-} */

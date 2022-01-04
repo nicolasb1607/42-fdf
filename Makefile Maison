@@ -16,7 +16,7 @@ $(EXEC) : $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 .o : .c
-	$(CC) $(CFLAGS) -lmlx -lXext -lX11 -c $< -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
+	$(CC) $(CFLAGS)  -c $< -o $@ -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
 
 clean : 
 	rm -f $(OBJS)

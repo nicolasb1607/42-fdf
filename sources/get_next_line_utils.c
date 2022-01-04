@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:49:44 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/09 09:24:31 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/03 17:37:06 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/ft_fdf.h"
 
 size_t	ft_strlen(const char *s)
 {

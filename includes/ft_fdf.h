@@ -13,9 +13,10 @@
 
 typedef struct s_map
 {
-	int	nb_row; 
-	int	nb_line; 
-	int	dist_point;
+	int	width;
+	int	height;
+	int	**z_val; 
+
 }	t_map;
 
 typedef struct s_img
@@ -32,7 +33,7 @@ typedef struct s_app
     void    *init;
     void    *win;
 	t_img	img;
-	t_map	
+	t_map	map;
 }   t_app;
 
 typedef struct s_point
@@ -42,13 +43,16 @@ typedef struct s_point
 }   t_point;
 
 
-int	handle_keypress(int keysym, t_app *app);
-int ft_close_program(t_app *app);
-int	ft_get_mouse_spot(int button, int x, int y, t_point *point);
-int ft_trace_line(t_img *img, int xa, int ya, int xb, int yb);
+int		handle_keypress(int keysym, t_app *app);
+int		ft_close_program(t_app *app);
+int		ft_get_mouse_spot(int button, int x, int y, t_point *point);
+int		ft_trace_line(t_img *img, int xa, int ya, int xb, int yb);
 void	img_pix_put(t_img *img, int x, int y, int color);
 void	render_background(t_img *img, int color);
-int	render(t_app *app);
-int create_matrix(t_app *app, char *file);
+int		render(t_app *app);
+int		**read_file(char *file, t_app *app);
+char	**ft_split(char const *s, char c);
+int		ft_wordcount(char const *s, char c);
+int		ft_atoi(const char *nptr);
 
 #endif
