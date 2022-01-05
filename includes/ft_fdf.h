@@ -7,9 +7,10 @@
 # include <X11/keysym.h> // Allow to use keysymbole rather than keycode to manage inputs
 # include "./get_next_line.h"
 # include <fcntl.h>
+# include <math.h>
 
-# define WINDOW_WIDTH 1920/2
-# define WINDOW_HEIGHT 1080/2
+# define WINDOW_WIDTH 1920
+# define WINDOW_HEIGHT 1080
 
 typedef struct s_map
 {
@@ -17,6 +18,8 @@ typedef struct s_map
 	int	height;
 	int	**z_val;
 	int	zoom;
+	int pos_x;
+	int pos_y;
 
 }	t_map;
 
@@ -49,6 +52,7 @@ int		ft_close_program(t_app *app);
 int		ft_get_mouse_spot(int button, int x, int y, t_point *point);
 int		ft_trace_line(int xa, int ya, int xb, int yb, t_app *app);
 int		draw_map(t_app *app);
+int isometric(int *x, int *y, int z);
 void	img_pix_put(t_img *img, int x, int y, int color);
 void	render_background(t_img *img, int color);
 int		render(t_app *app);

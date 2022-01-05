@@ -1,5 +1,12 @@
 #include "../includes/ft_fdf.h"
 
+int isometric(int *x, int *y, int z)
+{
+	*x = (*x - *y) * cos(0.8);
+	*y = (*x + *y) * sin(0.8) - z;
+	return (0);
+}
+
 int ft_trace_line(int xa, int ya, int xb, int yb, t_app *app)
 {
 	float xd;
@@ -7,22 +14,28 @@ int ft_trace_line(int xa, int ya, int xb, int yb, t_app *app)
 	float m;
 	float y;
 	int color;
+	int za;
+	int zb;
 
 	xd = xa - xb;
 	yd = ya - yb;
 	m = yd / xd;
 
-	if (app->map.z_val[ya][xa] || app->map.z_val[yb][xb])
+	za = app->map.z_val[ya][xa];
+	zb = app->map.z_val[yb][xb];
+
+	if (za || zb)
 		color = 0x00FF0000;
 	else
 		color = 0x00FFFFFF;
 
-	xa *= app->map.zoom;
-	xb *= app->map.zoom;
-	ya *= app->map.zoom;
-	yb *= app->map.zoom;
+	xa = xa * app->map.zoom + app->map.pos_x;
+	xb = xb * app->map.zoom + app->map.pos_x;
+	ya = ya * app->map.zoom + app->map.pos_y;
+	yb = yb * app->map.zoom + app->map.pos_y;
 
-	
+	isometric(&xa, &ya, za);
+	isometric(&xb, &yb, zb);
 
 	if (xa > xb)
 	{
@@ -43,7 +56,9 @@ int ft_trace_line(int xa, int ya, int xb, int yb, t_app *app)
 	else if (xa == xb)
 	{
 		while (ya <= yb)
+		{
 			img_pix_put(&app->img, xa, ya++, color);
+		}
 	}
 	return (0);
 }
@@ -59,11 +74,14 @@ int draw_map(t_app *app)
 		x = 0;
 		while (x <= app->map.width - 1 && y < app->map.height - 1)
 		{
+			
 			if (x < app->map.width - 1)
 			{
 				ft_trace_line(x, y, x, y + 1, app); // tracage horizontal
+
+				printf("value X = %d\n", x);
+				printf("value Y = %d\n", y);
 				ft_trace_line(x, y, x + 1, y, app); // tracage vertical
-				
 			}
 			else
 				ft_trace_line(x, y, x, y + 1, app);
