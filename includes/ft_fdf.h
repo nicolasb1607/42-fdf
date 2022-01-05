@@ -16,7 +16,7 @@ typedef struct s_map
 	int	width;
 	int	height;
 	int	**z_val;
-	int	zoom; 
+	int	zoom;
 
 }	t_map;
 

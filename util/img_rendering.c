@@ -28,10 +28,10 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
-	app->map.zoom = 10;
+	app->map.zoom = 30;
 	if(app->win == NULL)
 		return (0);
-	render_background(&app->img, 0x00FFFFFF);
+	render_background(&app->img, 0x00000000);
 	draw_map(app);
 	mlx_put_image_to_window(app->init, app->win, app->img.mlx_img, 0,0);
 
