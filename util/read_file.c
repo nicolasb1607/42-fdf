@@ -58,7 +58,7 @@ int *fill_matrix(char *nl, t_app *app)
 	return (line);
 }
 
-int **read_file(char *file, t_app *app)
+void read_file(char *file, t_app *app)
 {
 	int	i;
 	int fd;
@@ -80,5 +80,4 @@ int **read_file(char *file, t_app *app)
 	}
 	close(fd);
 	app->map.z_val[i] = NULL;
-	return (app->map.z_val);
 }

@@ -28,14 +28,11 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
+	app->map.zoom = 10;
 	if(app->win == NULL)
 		return (0);
 	render_background(&app->img, 0x00FFFFFF);
-	
-	ft_trace_line(&app->img, 300, 0, 0, 300);
-	ft_trace_line(&app->img, 300, 200, 0, 300);
-	ft_trace_line(&app->img, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-	
+	draw_map(app);
 	mlx_put_image_to_window(app->init, app->win, app->img.mlx_img, 0,0);
 
 	return (0);
