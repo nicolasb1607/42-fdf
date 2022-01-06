@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jan  6 10:34:00 2022
+# Make data base, printed on Thu Jan  6 14:45:05 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-307a5c88-cd8a-45fe-ac3b-bb6a6513de11.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-af009536-f5ff-4f2b-92c5-78fec6cf3e72.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -109,7 +109,7 @@ ZSH = /home/nicolas/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4577
+VSCODE_PID = 38721
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -229,7 +229,7 @@ MANAGERPID = 2182
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4535
+GIO_LAUNCHED_DESKTOP_FILE_PID = 38669
 # environment
 PAGER = less
 # environment
@@ -278,6 +278,7 @@ SNAP_COMMON = /var/snap/code/common
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 1)
 CC = gcc
+ 
 # environment
 SNAP_USER_DATA = /home/nicolas/snap/code/85
 # environment
@@ -297,7 +298,6 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
- 
 # . (device 66309, inode 3147033): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
@@ -311,14 +311,14 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Not a target:
 sources/get_next_line_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:08.118701964
+#  Last modified 2022-01-06 14:01:57.732589108
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/get_next_line.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:08.082701294
+#  Last modified 2022-01-06 14:01:57.700588886
 #  File has been updated.
 #  Successfully updated.
 
@@ -332,7 +332,7 @@ Makefile:
 # Not a target:
 util/read_file.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:08.006699877
+#  Last modified 2022-01-06 14:01:57.636588443
 #  File has been updated.
 #  Successfully updated.
 
@@ -347,14 +347,14 @@ clean:
 # Not a target:
 sources/ft_split.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:08.046700623
+#  Last modified 2022-01-06 14:01:57.668588665
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 util/img_rendering.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:07.974699282
+#  Last modified 2022-01-06 14:43:52.630876604
 #  File has been updated.
 #  Successfully updated.
 
@@ -367,13 +367,13 @@ re: fclean all
 # Not a target:
 util/win_ctrl.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:07.902697941
+#  Last modified 2022-01-06 14:01:57.544587806
 #  File has been updated.
 #  Successfully updated.
 
 fdf: main.o util/win_ctrl.o util/draw.o util/img_rendering.o util/read_file.o sources/ft_split.o sources/get_next_line.o sources/get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-05 21:33:44.930143442
+#  Last modified 2022-01-06 14:43:52.65487673
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 21):
@@ -404,7 +404,7 @@ fclean: clean
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 19:38:07.866697271
+#  Last modified 2022-01-06 14:01:57.516587612
 #  File has been updated.
 #  Successfully updated.
 
@@ -430,7 +430,7 @@ spe: all clean
 # Not a target:
 util/draw.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-05 21:33:44.898143303
+#  Last modified 2022-01-06 14:42:54.158569634
 #  File has been updated.
 #  Successfully updated.
 
@@ -453,6 +453,6 @@ util/draw.o:
 # strcache performance: lookups = 58 / hit rate = 44%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=0/58=0%
-# Finished Make data base on Thu Jan  6 10:34:00 2022
+# Finished Make data base on Thu Jan  6 14:45:05 2022
 
  
