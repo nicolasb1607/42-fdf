@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jan  4 10:22:05 2022
+# Make data base, printed on Thu Jan  6 10:34:00 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5b65c7a7-a8e3-4f3a-a37a-09682cb9fa27.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-307a5c88-cd8a-45fe-ac3b-bb6a6513de11.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -67,7 +67,7 @@ VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/899d46d82c4c95423
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.K45IF1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.XB7CF1
 # default
 .LOADED := 
 # default
@@ -109,7 +109,7 @@ ZSH = /home/nicolas/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4648
+VSCODE_PID = 4577
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -119,7 +119,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 14)
 INCLUDES = ./includes/
 # environment
-SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2027,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2027
+SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2303,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2303
 # automatic
 *F = $(notdir $*)
 # environment
@@ -171,7 +171,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/85
 # environment
-INVOCATION_ID = b324fa6114da4d02a8e8d86ab58c787f
+INVOCATION_ID = 0e0b0da94752477d9d814fba4402e8bf
 # environment
 SNAP_REVISION = 85
 # environment
@@ -209,7 +209,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2045
+SYSTEMD_EXEC_PID = 2320
 # environment
 DISPLAY = :0
 # environment
@@ -225,11 +225,11 @@ SNAP_DATA = /var/snap/code/85
 # environment
 SNAP_CONTEXT = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
 # environment
-MANAGERPID = 1900
+MANAGERPID = 2182
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4600
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4535
 # environment
 PAGER = less
 # environment
@@ -243,7 +243,7 @@ CFLAGS = -Wall -Wextra -Werror
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:35173
+JOURNAL_STREAM = 8:37014
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -277,7 +277,6 @@ SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 1)
- 
 CC = gcc
 # environment
 SNAP_USER_DATA = /home/nicolas/snap/code/85
@@ -298,6 +297,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
+ 
 # . (device 66309, inode 3147033): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
@@ -311,28 +311,28 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Not a target:
 sources/get_next_line_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:37:09.566551583
+#  Last modified 2022-01-05 19:38:08.118701964
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/get_next_line.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:36:35.486493209
+#  Last modified 2022-01-05 19:38:08.082701294
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:35:00.446326863
+#  Last modified 2022-01-05 19:37:52.242408796
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 util/read_file.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:29:07.613816026
+#  Last modified 2022-01-05 19:38:08.006699877
 #  File has been updated.
 #  Successfully updated.
 
@@ -347,14 +347,14 @@ clean:
 # Not a target:
 sources/ft_split.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:29:07.713816155
+#  Last modified 2022-01-05 19:38:08.046700623
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 util/img_rendering.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:29:07.521815908
+#  Last modified 2022-01-05 19:38:07.974699282
 #  File has been updated.
 #  Successfully updated.
 
@@ -367,17 +367,17 @@ re: fclean all
 # Not a target:
 util/win_ctrl.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:29:07.325815657
+#  Last modified 2022-01-05 19:38:07.902697941
 #  File has been updated.
 #  Successfully updated.
 
 fdf: main.o util/win_ctrl.o util/draw.o util/img_rendering.o util/read_file.o sources/ft_split.o sources/get_next_line.o sources/get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-03 17:37:09.650551726
+#  Last modified 2022-01-05 21:33:44.930143442
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 21):
-	$(CC) $(CFLAGS)  $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
+	$(CC) $(CFLAGS)  $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) -g
 
 # Not a target:
 .DEFAULT:
@@ -404,7 +404,7 @@ fclean: clean
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:29:07.237815543
+#  Last modified 2022-01-05 19:38:07.866697271
 #  File has been updated.
 #  Successfully updated.
 
@@ -413,7 +413,7 @@ main.o:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
-	$(CC) $(CFLAGS) -c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) 
+	$(CC) $(CFLAGS) -c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) -g
 
 # Not a target:
 .c:
@@ -430,7 +430,7 @@ spe: all clean
 # Not a target:
 util/draw.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-03 17:29:07.425815784
+#  Last modified 2022-01-05 21:33:44.898143303
 #  File has been updated.
 #  Successfully updated.
 
@@ -453,6 +453,6 @@ util/draw.o:
 # strcache performance: lookups = 58 / hit rate = 44%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=0/58=0%
-# Finished Make data base on Tue Jan  4 10:22:05 2022
+# Finished Make data base on Thu Jan  6 10:34:00 2022
 
  

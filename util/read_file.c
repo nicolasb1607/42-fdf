@@ -1,10 +1,5 @@
 #include "../includes/ft_fdf.h"
 
-// - Determiner le nombre de lignes
-// - Determiner le nmobre de colonne
-
-// - Creer une matrice contenant chacun des numeros de la map
-
 int get_height(char *file) // function verified
 {
 	int fd;
