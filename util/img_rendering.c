@@ -28,9 +28,9 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
-	app->map.zoom = 30;
-	app->map.pos_x = 0;
-	app->map.pos_y = 0;
+	app->map.zoom = 60;
+	app->map.pos_x = 500;
+	app->map.pos_y = 500;
 
 	if(app->win == NULL)
 		return (0);
