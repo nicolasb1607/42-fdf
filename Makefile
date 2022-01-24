@@ -9,6 +9,7 @@ SRCS = ./main.c \
 	./sources/ft_split.c \
 	./sources/get_next_line.c \
 	./sources/get_next_line_utils.c \
+	./util/bresenham.c \
 
 
 INCLUDES = ./includes/
@@ -18,10 +19,10 @@ OBJS = ${SRCS:.c=.o}
 all : $(EXEC)
 
 $(EXEC) : $(OBJS)
-	$(CC) $(CFLAGS)  $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) -g
+	$(CC) $(CFLAGS)  $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
 
 .o : .c
-	$(CC) $(CFLAGS) -c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
 
 clean : 
 	rm -f $(OBJS)

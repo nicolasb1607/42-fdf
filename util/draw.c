@@ -6,15 +6,16 @@ int draw(t_app *app)
 	int y;
 
 	y = 0;
+		
 	while (y < app->map.height)
 	{
 		x = 0;
 		while (x < app->map.width)
 		{
 			if (x < app->map.width - 1)
-				ft_trace_line(x, y, x + 1, y, app);
+				trace_line(x, y, x + 1, y, app);
 			if (y < app->map.height - 1)
-				ft_trace_line(x, y, x, y + 1, app);
+				trace_line(x, y, x, y + 1, app);
 			x++;
 		}
 		y++;

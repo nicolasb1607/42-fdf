@@ -18,6 +18,8 @@ typedef struct s_map
 	int	height;
 	int	**z_val;
 	int	zoom;
+	double angle;
+	int	color;
 	int pos_x;
 	int pos_y;
 
@@ -42,21 +44,23 @@ typedef struct s_app
 
 typedef struct s_point
 {
-    int x;
-    int y;
-}   t_point;
+	int x;
+	int y;
+}	t_point;
 
 //-----------windows control function
 int		handle_keypress(int keysym, t_app *app);
 int		ft_close_program(t_app *app);
 int		ft_get_mouse_spot(int button, int x, int y, t_point *point);
+
 //-----------image rendering function
+
 void	img_pix_put(t_img *img, int x, int y, int color);
 void	render_background(t_img *img, int color);
 int		render(t_app *app);
-
-void	trace_line(int x1, int y1, int x2, int y2, t_app app);
-
+void	trace_line(int x1, int y1, int x2, int y2, t_app *app);
+int		draw(t_app *app);
+//-------------------------Map parsing 
 void read_file(char *file, t_app *app);
 char	**ft_split(char const *s, char c);
 int		ft_wordcount(char const *s, char c);
