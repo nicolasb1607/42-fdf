@@ -18,7 +18,7 @@ typedef struct s_map
 	int	height;
 	int	**z_val;
 	int	zoom;
-	double angle;
+	float angle;
 	int	color;
 	int pos_x;
 	int pos_y;
@@ -58,7 +58,6 @@ int		ft_get_mouse_spot(int button, int x, int y, t_point *point);
 void	img_pix_put(t_img *img, int x, int y, int color);
 void	render_background(t_img *img, int color);
 int		render(t_app *app);
-void	trace_line(int x1, int y1, int x2, int y2, t_app *app);
 int		draw(t_app *app);
 void	bres(int x1, int y1, int x2, int y2, t_app *app);
 //-------------------------Map parsing 

@@ -27,10 +27,10 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
-	app->map.zoom = 20;
-	app->map.angle = 0.5;
+	app->map.zoom = 50;
+	app->map.angle = 0.463646716;
 	app->map.pos_x = 500;
-	app->map.pos_y = 500;
+	app->map.pos_y = 200;
 
 	if(app->win == NULL)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:55:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/25 14:16:43 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:06:37 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void isometric(int *x, int *y, int z, t_app *app)
 	prev_x = *x;
 	prev_y = *y;
 	*x = (prev_x - prev_y) * cos(app->map.angle);
-	*y = (prev_x + prev_y) * sin(app->map.angle) - z;
+	*y = (prev_x + prev_y) * sin(app->map.angle) - z * 3;
 }
 
 void apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app)
@@ -30,7 +30,6 @@ void apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app)
 	*x2 *= app->map.zoom;
 	*y2 *= app->map.zoom;
 }
-
 
 void apply_color(int x1, int y1, int x2, int y2, t_app *app)
 {
@@ -46,6 +45,13 @@ void apply_color(int x1, int y1, int x2, int y2, t_app *app)
 		app->map.color = 0x00FFFFFF;
 }
 
+void change_pos(int *x1, int *y1, int *x2, int *y2, t_app *app)
+{
+	*x1 = *x1 + app->map.pos_x;
+	*x2 = *x2 + app->map.pos_x;
+	*y1 = *y1 + app->map.pos_y;
+	*y2 = *y2 + app->map.pos_y;
+}
 
 int sign(int x)
 {
@@ -72,14 +78,13 @@ void bres(int x1, int y1, int x2, int y2, t_app *app)
 
 	int z1 = app->map.z_val[y1][x1];
 	int z2 = app->map.z_val[y2][x2];
-	
 	apply_color(x1, y1, x2, y2, app);
+
 	apply_zoom(&x1, &y1, &x2, &y2, app);
-
-
 	isometric(&x1, &y1, z1, app);
 	isometric(&x2, &y2, z2, app);
-	
+
+	change_pos(&x1, &y1, &x2, &y2, app);
 	x = x1;
 	y = y1;
 	dx = abs(x2 - x1);
