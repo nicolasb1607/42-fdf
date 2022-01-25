@@ -12,6 +12,18 @@ int handle_keypress(int keysym, t_app *app)
 {
 	if(keysym == XK_Escape)
 		ft_close_program(app);
+	if(keysym == XK_a)
+		app->map.pos_x -= 20;
+	if(keysym == XK_d)
+		app->map.pos_x += 20 ;
+	if(keysym == XK_w)
+		app->map.pos_y -= 20 ;
+	if(keysym == XK_s)
+		app->map.pos_y += 20 ;
+	if(keysym == XK_Up)
+		app->map.zoom +=  2;
+	if(keysym == XK_Down)
+		app->map.zoom -=  2;
 	return (0);
 }
 

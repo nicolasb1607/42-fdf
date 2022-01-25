@@ -27,15 +27,12 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
-	app->map.zoom = 40;
 	app->map.angle = 0.463646716;
-	app->map.pos_x = WINDOW_WIDTH / 2;
-	app->map.pos_y = WINDOW_HEIGHT / 2;
-
+	
 	if(app->win == NULL)
 		return (0);
 
-	render_background(&app->img, 0x0000FF00);
+	render_background(&app->img, 0x00000000);
 	draw(app);
 	mlx_put_image_to_window(app->init, app->win, app->img.mlx_img, 0,0);
 
