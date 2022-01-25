@@ -13,9 +13,9 @@ int draw(t_app *app)
 		while (x < app->map.width)
 		{
 			if (x < app->map.width - 1)
-				trace_line(x, y, x + 1, y, app);
+				bres(x, y, x + 1, y, app);
 			if (y < app->map.height - 1)
-				trace_line(x, y, x, y + 1, app);
+				bres(x, y, x, y + 1, app);
 			x++;
 		}
 		y++;

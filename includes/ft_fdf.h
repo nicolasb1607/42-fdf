@@ -60,6 +60,7 @@ void	render_background(t_img *img, int color);
 int		render(t_app *app);
 void	trace_line(int x1, int y1, int x2, int y2, t_app *app);
 int		draw(t_app *app);
+void	bres(int x1, int y1, int x2, int y2, t_app *app);
 //-------------------------Map parsing 
 void read_file(char *file, t_app *app);
 char	**ft_split(char const *s, char c);

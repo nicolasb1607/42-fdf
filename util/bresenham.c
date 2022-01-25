@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bresenham.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/25 13:55:52 by nburat-d          #+#    #+#             */
+/*   Updated: 2022/01/25 14:16:43 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_fdf.h"
 
-void	isometric(int *x, int *y , t_app *app)
+void isometric(int *x, int *y, int z, t_app *app)
 {
 	int prev_x;
 	int prev_y;
@@ -8,7 +20,7 @@ void	isometric(int *x, int *y , t_app *app)
 	prev_x = *x;
 	prev_y = *y;
 	*x = (prev_x - prev_y) * cos(app->map.angle);
-	*y = (prev_x + prev_y) * sin(app->map.angle);
+	*y = (prev_x + prev_y) * sin(app->map.angle) - z;
 }
 
 void apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app)
@@ -19,19 +31,6 @@ void apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app)
 	*y2 *= app->map.zoom;
 }
 
-void check_signs(int *x1, int *y1, int *x2, int *y2)
-{
-	int temp;
-	if (*x1 > *x2)
-	{
-		temp = *x1;
-		*x1 = *x2;
-		*x2 = temp;
-		temp = *y1;
-		*y1 = *y2;
-		*y2 = temp;
-	}
-}
 
 void apply_color(int x1, int y1, int x2, int y2, t_app *app)
 {
@@ -47,52 +46,72 @@ void apply_color(int x1, int y1, int x2, int y2, t_app *app)
 		app->map.color = 0x00FFFFFF;
 }
 
-void vert_line(int x, int y1, int y2, t_app *app, int color)
-{
-	int temp;
 
-	if (y1 > y2)
-	{
-		temp = y1;
-		y1 = y2;
-		y2 = temp;
-	}
-	while (y1 <= y2)
-		mlx_pixel_put(app->init, app->win, x, y1++, color);
+int sign(int x)
+{
+	if (x > 0)
+		return 1;
+	else if (x < 0)
+		return -1;
+	else
+		return 0;
 }
 
-void trace_line(int x1, int y1, int x2, int y2, t_app *app)
+void bres(int x1, int y1, int x2, int y2, t_app *app)
 {
+	int x;
+	int y;
 	int dx;
 	int dy;
-	int e;
+	int swap;
+	int temp;
+	int s1;
+	int s2;
+	int p;
+	int i;
 
+	int z1 = app->map.z_val[y1][x1];
+	int z2 = app->map.z_val[y2][x2];
+	
 	apply_color(x1, y1, x2, y2, app);
 	apply_zoom(&x1, &y1, &x2, &y2, app);
 
-	 isometric(&x1, &y1, app);
-	 isometric(&x2, &y2, app);
 
-	check_signs(&x1, &y1, &x2, &y2);
-
-	if (x1 == x2)
+	isometric(&x1, &y1, z1, app);
+	isometric(&x2, &y2, z2, app);
+	
+	x = x1;
+	y = y1;
+	dx = abs(x2 - x1);
+	dy = abs(y2 - y1);
+	s1 = sign(x2 - x1);
+	s2 = sign(y2 - y1);
+	swap = 0;
+	mlx_pixel_put(app->init, app->win, x1, y1, app->map.color);
+	if (dy > dx)
 	{
-		vert_line(x1, y1, y2, app, app->map.color);
-		return;
+		temp = dx;
+		dx = dy;
+		dy = temp;
+		swap = 1;
 	}
-	e = x2 - x1;
-	dx = e * 2;
-	dy = (y2 - y1) * 2;
-	while (x1 <= x2)
+	p = 2 * dy - dx;
+	for (i = 0; i < dx; i++)
 	{
-		mlx_pixel_put(app->init, app->win, x1, y1, app->map.color);
-		x1 += 1;
-		e = e - dy;
-		if (e <= 0)
+		mlx_pixel_put(app->init, app->win, x, y, app->map.color);
+		while (p >= 0)
 		{
-			y1 += 1;
-			e = e + dx;
+			p = p - 2 * dx;
+			if (swap)
+				x += s1;
+			else
+				y += s2;
 		}
+		p = p + 2 * dy;
+		if (swap)
+			y += s2;
+		else
+			x += s1;
 	}
+	mlx_pixel_put(app->init, app->win, x2, y2, app->map.color);
 }
-

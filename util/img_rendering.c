@@ -35,10 +35,10 @@ int	render(t_app *app)
 	if(app->win == NULL)
 		return (0);
 
-	//trace_line(0, 0, 500, 300, app);
-	//trace_line(0, 500, 500, 0, app);
-	//trace_line(500, 0, 0, 400, app);
-	//trace_line(500, 350, 0, 0, app);
+	// bres(0, 0, 500, 300, app);
+	// bres(0, 500, 500, 0, app);
+	// bres(500, 0, 0, 400, app);
+	// bres(500, 350, 0, 0, app);
 	//render_background(&app->img, 0x00000000);
 	draw(app);
 	//mlx_put_image_to_window(app->init, app->win, app->img.mlx_img, 0,0);
