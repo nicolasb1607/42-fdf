@@ -16,8 +16,8 @@ int main(int ac, char **av)
 			return (0);
 		}
 		// /*setup the img */
-		// app.img.mlx_img = mlx_new_image(app.init, WINDOW_WIDTH, WINDOW_HEIGHT);
-		// app.img.addr = mlx_get_data_addr(app.img.mlx_img, &app.img.bpp, &app.img.line_len, &app.img.endian);
+		app.img.mlx_img = mlx_new_image(app.init, WINDOW_WIDTH, WINDOW_HEIGHT);
+		app.img.addr = mlx_get_data_addr(app.img.mlx_img, &app.img.bpp, &app.img.line_len, &app.img.endian);
 
 
 		read_file(av[1], &app);
@@ -33,7 +33,7 @@ int main(int ac, char **av)
 		mlx_loop(app.init);
 
 		// free mem allocated for the image
-		//mlx_destroy_image(app.init, app.img.mlx_img);
+		mlx_destroy_image(app.init, app.img.mlx_img);
 		mlx_destroy_display(app.init);
 		free(app.init);
 	}

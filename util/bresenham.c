@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:55:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/25 15:06:37 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:59:07 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ void bres(int x1, int y1, int x2, int y2, t_app *app)
 	int p;
 	int i;
 
-	int z1 = app->map.z_val[y1][x1];
-	int z2 = app->map.z_val[y2][x2];
+	// int z1 = app->map.z_val[y1][x1];
+	// int z2 = app->map.z_val[y2][x2];
+	
 	apply_color(x1, y1, x2, y2, app);
-
 	apply_zoom(&x1, &y1, &x2, &y2, app);
-	isometric(&x1, &y1, z1, app);
-	isometric(&x2, &y2, z2, app);
+	// isometric(&x1, &y1, z1, app);
+	// isometric(&x2, &y2, z2, app);
 
 	change_pos(&x1, &y1, &x2, &y2, app);
 	x = x1;
@@ -92,7 +92,8 @@ void bres(int x1, int y1, int x2, int y2, t_app *app)
 	s1 = sign(x2 - x1);
 	s2 = sign(y2 - y1);
 	swap = 0;
-	mlx_pixel_put(app->init, app->win, x1, y1, app->map.color);
+	//mlx_pixel_put(app->init, app->win, x1, y1, app->map.color);
+	img_pix_put(&app->img, x1, y1, app->map.color);
 	if (dy > dx)
 	{
 		temp = dx;
@@ -103,7 +104,8 @@ void bres(int x1, int y1, int x2, int y2, t_app *app)
 	p = 2 * dy - dx;
 	for (i = 0; i < dx; i++)
 	{
-		mlx_pixel_put(app->init, app->win, x, y, app->map.color);
+		//mlx_pixel_put(app->init, app->win, x, y, app->map.color);
+		img_pix_put(&app->img, x, y, app->map.color);
 		while (p >= 0)
 		{
 			p = p - 2 * dx;
@@ -118,5 +120,6 @@ void bres(int x1, int y1, int x2, int y2, t_app *app)
 		else
 			x += s1;
 	}
-	mlx_pixel_put(app->init, app->win, x2, y2, app->map.color);
+	img_pix_put(&app->img, x2, y2, app->map.color);
+	//mlx_pixel_put(app->init, app->win, x2, y2, app->map.color);
 }
