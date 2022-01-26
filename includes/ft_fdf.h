@@ -48,6 +48,21 @@ typedef struct s_point
 	int y;
 }	t_point;
 
+typedef struct s_line
+{
+	int x;
+	int y;
+	int dx;
+	int dy;
+	int swap;
+	int temp;
+	int s1;
+	int s2;
+	int p;
+	int i;
+}	t_line;
+
+
 //-----------windows control function
 int		handle_keypress(int keysym, t_app *app);
 int		ft_close_program(t_app *app);
@@ -60,6 +75,15 @@ void	render_background(t_img *img, int color);
 int		render(t_app *app);
 int		draw(t_app *app);
 void	bres(int x1, int y1, int x2, int y2, t_app *app);
+
+//-----------view change
+
+void isometric(int *x, int *y, int z, t_app *app);
+void apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app);
+void apply_color(int x1, int y1, int x2, int y2, t_app *app);
+void change_pos(int *x1, int *y1, int *x2, int *y2, t_app *app);
+
+
 //-------------------------Map parsing 
 void read_file(char *file, t_app *app);
 char	**ft_split(char const *s, char c);

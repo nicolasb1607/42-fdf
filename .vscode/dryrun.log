@@ -1,0 +1,13 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nicolas/Documents/github/fdf'
+gcc -Wall -Wextra -Werror   -c -o main.o main.c
+gcc -Wall -Wextra -Werror   -c -o util/win_ctrl.o util/win_ctrl.c
+gcc -Wall -Wextra -Werror   -c -o util/draw.o util/draw.c
+gcc -Wall -Wextra -Werror   -c -o util/img_rendering.o util/img_rendering.c
+gcc -Wall -Wextra -Werror   -c -o util/read_file.o util/read_file.c
+gcc -Wall -Wextra -Werror   -c -o sources/ft_split.o sources/ft_split.c
+gcc -Wall -Wextra -Werror   -c -o sources/get_next_line.o sources/get_next_line.c
+gcc -Wall -Wextra -Werror   -c -o sources/get_next_line_utils.o sources/get_next_line_utils.c
+gcc -Wall -Wextra -Werror  main.o util/win_ctrl.o util/draw.o util/img_rendering.o util/read_file.o sources/ft_split.o sources/get_next_line.o sources/get_next_line_utils.o -o fdf -L ./sources -lmlx_Linux -lXext -lX11 -I ./includes/ -g
+make: Leaving directory '/home/nicolas/Documents/github/fdf'
+ 

@@ -27,7 +27,7 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
-	app->map.angle = 0.463646716;
+	
 	
 	if(app->win == NULL)
 		return (0);

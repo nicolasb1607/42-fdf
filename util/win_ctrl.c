@@ -24,6 +24,10 @@ int handle_keypress(int keysym, t_app *app)
 		app->map.zoom +=  2;
 	if(keysym == XK_Down)
 		app->map.zoom -=  2;
+	if(keysym == XK_Right)
+		app->map.angle += 0.02;
+	if(keysym == XK_Left)
+		app->map.angle -= 0.02 ;
 	return (0);
 }
 
