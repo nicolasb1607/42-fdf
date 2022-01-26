@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   img_rendering.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/26 17:54:22 by nburat-d          #+#    #+#             */
+/*   Updated: 2022/01/26 17:55:18 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_fdf.h"
 
 void	render_background(t_img *img, int color)
@@ -19,7 +31,7 @@ void	render_background(t_img *img, int color)
 
 void	img_pix_put(t_img *img, int x, int y, int color)
 {
-	char *pixel;
+	char	*pixel;
 
 	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
 	*(int *)pixel = color;
@@ -27,14 +39,10 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 int	render(t_app *app)
 {
-	
-	
-	if(app->win == NULL)
+	if (app->win == NULL)
 		return (0);
-
 	render_background(&app->img, 0x00000000);
 	draw(app);
-	mlx_put_image_to_window(app->init, app->win, app->img.mlx_img, 0,0);
-
+	mlx_put_image_to_window(app->init, app->win, app->img.mlx_img, 0, 0);
 	return (0);
 }
