@@ -86,9 +86,10 @@ void change_pos(int *x1, int *y1, int *x2, int *y2, t_app *app);
 
 
 //-------------------------Map parsing 
-void read_file(char *file, t_app *app);
-char	**ft_split(char const *s, char c);
-int		ft_wordcount(char const *s, char c);
-int		ft_atoi(const char *nptr);
+void		read_file(char *file, t_app *app);
+char		**ft_split(char const *s, char c);
+char	**free_tab(char **tab);
+int			ft_wordcount(char const *s, char c);
+int			ft_atoi(const char *nptr);
 
 #endif

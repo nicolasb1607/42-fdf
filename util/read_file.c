@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:58:14 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/26 18:00:57 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:53:37 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	get_height(char *file)
 		free(nl);
 		nl = get_next_line(fd);
 	}
+	free(nl);
 	close(fd);
 	return (height);
 }
@@ -56,11 +57,11 @@ int	*fill_matrix(char *nl, t_app *app)
 	line = malloc(sizeof(int) * (app->map.width + 1));
 	while (i < app->map.width)
 	{
-		line[i] = atoi(splitted[i]);
+		line[i] = ft_atoi(splitted[i]);
 		i++;
 	}
 	line[i] = '\0';
-	free(splitted);
+	free_tab(splitted);
 	return (line);
 }
 

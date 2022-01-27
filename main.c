@@ -42,9 +42,7 @@ int main(int ac, char **av)
 		mlx_loop(app.init);
 
 		// free mem allocated for the image
-		mlx_destroy_image(app.init, app.img.mlx_img);
-		mlx_destroy_display(app.init);
-		free(app.init);
+		
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:57:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/27 10:20:16 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:57:13 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 int	ft_close_program(t_app *app)
 {
 	printf("Exiting program\n");
-	mlx_destroy_window((*app).init, (*app).win);
+	mlx_destroy_image(app->init, app->img.mlx_img);
+	mlx_destroy_window(app->init, app->win);
+	mlx_destroy_display(app->init);
+	free_tab((char**) app->map.z_val);
+	free(app->init);
 	app->win = NULL;
-	return (0);
+	exit (0);
 }
 
 int	handle_keypress(int keysym, t_app *app)

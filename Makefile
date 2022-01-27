@@ -7,12 +7,12 @@ SRCS = ./main.c \
 	./util/img_rendering.c \
 	./util/read_file.c \
 	./sources/ft_split.c \
+	./sources/ft_atoi.c \
 	./sources/get_next_line.c \
 	./sources/get_next_line_utils.c \
 	./util/bresenham.c \
 	./util/view_change.c \
-
-
+	
 INCLUDES = ./includes/
 
 OBJS = ${SRCS:.c=.o}

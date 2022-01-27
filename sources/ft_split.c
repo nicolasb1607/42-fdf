@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:59:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/03 16:51:42 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:53:57 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_wordlen(char const *s, char c)
 	return (i + 1);
 }
 
-static char	**free_tab(char **tab)
+char	**free_tab(char **tab)
 {
 	int	i;
 
