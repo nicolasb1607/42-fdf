@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:05:20 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/26 17:53:31 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/27 10:20:25 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	isometric(int *x, int *y, int z, t_app *app)
 	prev_x = *x;
 	prev_y = *y;
 	*x = (prev_x - prev_y) * cos(app->map.angle);
-	*y = (prev_x + prev_y) * sin(app->map.angle) - z * 3;
+	*y = (prev_x + prev_y) * sin(app->map.angle) - z * app->map.deep_level;
 }
 
 void	apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app)

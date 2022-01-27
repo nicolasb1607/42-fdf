@@ -18,6 +18,7 @@ typedef struct s_map
 	int	height;
 	int	**z_val;
 	int	zoom;
+	int deep_level;
 	float angle;
 	int	color;
 	int pos_x;
@@ -74,7 +75,7 @@ void	img_pix_put(t_img *img, int x, int y, int color);
 void	render_background(t_img *img, int color);
 int		render(t_app *app);
 int		draw(t_app *app);
-void	bres(int x1, int y1, int x2, int y2, t_app *app);
+void	bres(t_point p1, t_point p2, t_app *app);
 
 //-----------view change
 

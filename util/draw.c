@@ -6,30 +6,43 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:01:13 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/26 18:01:28 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/27 11:05:41 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fdf.h"
 
+void	draw_pixel(t_point p0, t_point p1, t_app *app)
+{
+	if (p0.x < app->map.width - 1)
+	{
+		p1.x = p0.x + 1;
+		p1.y = p0.y;
+		bres(p0, p1, app);
+	}
+	if (p0.y < app->map.height - 1)
+	{
+		p1.x = p0.x;
+		p1.y = p0.y + 1;
+		bres(p0, p1, app);
+	}
+}
+
 int	draw(t_app *app)
 {
-	int	x;
-	int	y;
+	t_point	p0;
+	t_point	p1;
 
-	y = 0;
-	while (y < app->map.height)
+	p0.y = 0;
+	while (p0.y < app->map.height)
 	{
-		x = 0;
-		while (x < app->map.width)
+		p0.x = 0;
+		while (p0.x < app->map.width)
 		{
-			if (x < app->map.width - 1)
-				bres(x, y, x + 1, y, app);
-			if (y < app->map.height - 1)
-				bres(x, y, x, y + 1, app);
-			x++;
+			draw_pixel(p0, p1, app);
+			p0.x++;
 		}
-		y++;
+		p0.y++;
 	}
 	return (0);
 }
