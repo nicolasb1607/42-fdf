@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:59:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/27 17:53:57 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:31:32 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**free_tab(char **tab)
 	int	i;
 
 	i = 0;
-	while (!tab[i])
+	while (tab[i])
 	{
 		free(tab[i]);
 		i++;

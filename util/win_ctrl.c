@@ -6,11 +6,24 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:57:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/27 17:57:13 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:33:52 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fdf.h"
+
+void free_map(int **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+}
 
 int	ft_close_program(t_app *app)
 {
@@ -18,7 +31,7 @@ int	ft_close_program(t_app *app)
 	mlx_destroy_image(app->init, app->img.mlx_img);
 	mlx_destroy_window(app->init, app->win);
 	mlx_destroy_display(app->init);
-	free_tab((char**) app->map.z_val);
+	free_map(app->map.z_val);
 	free(app->init);
 	app->win = NULL;
 	exit (0);
