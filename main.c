@@ -22,7 +22,7 @@ int main(int ac, char **av)
 		
 		app.map.pos_x = WINDOW_WIDTH / 2;
 		app.map.pos_y = WINDOW_HEIGHT / 2;
-		app.map.zoom = 3;
+		app.map.zoom = 1;
 		app.map.deep_level = 1;
 		app.map.angle = 0.463646716;
 

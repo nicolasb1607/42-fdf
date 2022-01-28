@@ -20,10 +20,10 @@ OBJS = ${SRCS:.c=.o}
 all : $(EXEC)
 
 $(EXEC) : $(OBJS)
-	$(CC) $(CFLAGS)  $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -O3 $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
 
 .o : .c
-	$(CC) $(CFLAGS) -c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -O3-c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
 
 clean : 
 	rm -f $(OBJS)
