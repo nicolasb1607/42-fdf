@@ -17,7 +17,7 @@ typedef struct s_map
 	int	width;
 	int	height;
 	int	**z_val;
-	int	zoom;
+	double zoom;
 	int deep_level;
 	float angle;
 	int	color;
@@ -84,7 +84,8 @@ void	bres(t_point p1, t_point p2, t_app *app);
 void isometric(int *x, int *y, int z, t_app *app);
 void set_zoom(t_app *app);
 void iso_zoom(t_app *app);
-//void set_pos(t_app *app);
+void set_pos(t_app *app);
+void iso_pos(t_app *app);
 void apply_zoom(int *x1, int *y1, int *x2, int *y2, t_app *app);
 void apply_color(int x1, int y1, int x2, int y2, t_app *app);
 void change_pos(int *x1, int *y1, int *x2, int *y2, t_app *app);

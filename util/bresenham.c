@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:55:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 18:46:46 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:25:27 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	bres(t_point p1, t_point p2, t_app *app)
 	apply_zoom(&p1.x, &p1.y, &p2.x, &p2.y, app);
 	isometric(&p1.x, &p1.y, z1, app);
 	isometric(&p2.x, &p2.y, z2, app);
-	//change_pos(&p1.x, &p1.y, &p2.x, &p2.y, app);
+	change_pos(&p1.x, &p1.y, &p2.x, &p2.y, app);
 	line.x = p1.x;
 	line.y = p1.y;
 	line.dx = abs(p2.x - p1.x);

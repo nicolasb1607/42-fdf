@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		app.map.deep_level = 1;
 		app.map.angle = 0.463646716;
 
-		set_zoom(&app);
+		iso_zoom(&app);
 		render(&app);
 		mlx_key_hook(app.win, &handle_keypress, &app);
 		

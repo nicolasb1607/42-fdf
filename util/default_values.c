@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:10:45 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 18:34:37 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:42:01 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,41 @@ void set_zoom(t_app *app)
 		app->map.zoom--;
 	while (app->map.height * app->map.zoom > WINDOW_HEIGHT)
 		app->map.zoom--;
-	//set_pos(app);
+	set_pos(app);
 }
 
-// void set_pos(t_app *app)
-// {
-// 	int p1;
-// 	int p2;
-// 	int difx;
-// 	int dify;
+void set_pos(t_app *app)
+{
+	int p1;
+	int p2;
+	int difx;
+	int dify;
 
-// 	p1 = app->map.width * app->map.zoom;
-// 	p2 = app->map.height * app->map.zoom;
-// 	dif
+	p1 = app->map.width /2 * app->map.zoom;
+	p2 = app->map.height / 2 * app->map.zoom;
+	difx = WINDOW_WIDTH / 2 - p1;
+	dify = WINDOW_HEIGHT / 2 - p2;
+	app->map.pos_x = difx;
+	app->map.pos_y = dify;
+}
 
-// }
+void iso_pos(t_app *app)
+{
+
+	int p1;
+	int p2;
+	int difx;
+	int dify;
+
+	p1 = (app->map.width - app->map.height) /2 * app->map.zoom * cos(app->map.angle);
+	p2 = (app->map.height + app->map.width) / 2  * app->map.zoom * sin(app->map.angle);
+	difx = WINDOW_WIDTH / 2 - p1;
+	dify = WINDOW_HEIGHT / 2 - p2;
+	app->map.pos_x = difx;
+	app->map.pos_y = dify;
+
+}
+
 
 void iso_zoom(t_app *app)
 {
@@ -51,5 +71,5 @@ void iso_zoom(t_app *app)
 		app->map.zoom -= 0.5;
 		iso_ph = (app->map.height + app->map.width) * app->map.zoom * sin(app->map.angle);
 	}
-	//set_pos(app);
+	iso_pos(app);
 }

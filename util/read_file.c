@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:58:14 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 19:09:09 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:16:36 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	get_height(char *file)
 	int		i;
 	
 	fd = open(file, O_RDONLY);
+	printf("fd heigth= %d\n", fd);
 	height = 0;
 	bread = 1;
 	while (bread > 0)
@@ -45,10 +46,11 @@ int	get_width(char *file)
 	int		width;
 
 	fd = open(file, O_RDONLY);
+	printf("fd get width= %d\n", fd);
 	nl = get_next_line(fd);
+	close(fd);
 	width = ft_wordcount(nl, ' ');
 	free(nl);
-	close(fd);
 	return (width);
 }
 
@@ -86,6 +88,7 @@ void	read_file(char *file, t_app *app)
 	printf("map witdh = %d\n", app->map.width);
 	app->map.z_val = (int**) malloc(sizeof(int *) * (app->map.height + 1));
 	fd = open(file, O_RDONLY);
+	printf("fd read file = %d\n", fd);
 	while (i < app->map.height)
 	{
 		nl = get_next_line(fd);
