@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:58:14 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 11:50:50 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/31 19:09:09 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	*fill_matrix(char *nl, t_app *app)
 	i = 0;
 	splitted = ft_split(nl, ' ');
 	line = (int*) malloc(sizeof(int) * (app->map.width + 1));
+	if (!line)
+		return (NULL);
 	while (i < app->map.width)
 	{
 		line[i] = ft_atoi(splitted[i]);
@@ -80,11 +82,14 @@ void	read_file(char *file, t_app *app)
 	i = 0;
 	app->map.height = get_height(file);
 	app->map.width = get_width(file);
+	printf("map height = %d\n", app->map.height);
+	printf("map witdh = %d\n", app->map.width);
 	app->map.z_val = (int**) malloc(sizeof(int *) * (app->map.height + 1));
 	fd = open(file, O_RDONLY);
 	while (i < app->map.height)
 	{
 		nl = get_next_line(fd);
+		printf("nl = %s\n", nl);
 		app->map.z_val[i] = fill_matrix(nl, app);
 		free(nl);
 		i++;

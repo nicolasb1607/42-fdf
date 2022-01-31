@@ -19,21 +19,22 @@ int main(int ac, char **av)
 		app.img.mlx_img = mlx_new_image(app.init, WINDOW_WIDTH, WINDOW_HEIGHT);
 		app.img.addr = mlx_get_data_addr(app.img.mlx_img, &app.img.bpp, &app.img.line_len, &app.img.endian);
 		
-		
-		app.map.pos_x = WINDOW_WIDTH / 2;
-		app.map.pos_y = WINDOW_HEIGHT / 2;
-		app.map.zoom = 1;
+		read_file(av[1], &app);
+
+		app.map.pos_x = 0;
+		app.map.pos_y = 0;
+		app.map.zoom = 50;
 		app.map.deep_level = 1;
 		app.map.angle = 0.463646716;
 
-		read_file(av[1], &app);
-
+		set_zoom(&app);
+		render(&app);
 		mlx_key_hook(app.win, &handle_keypress, &app);
 		
 		mlx_hook(app.win, 17, 0, &ft_close_program, &app);
 		
 		// Draw stuff on the image prior to put the image on the window to avoid flickering
-		mlx_loop_hook(app.init, &render, &app);
+		//mlx_loop_hook(app.init, &render, &app);
 
 		//close window with ESC key or by clicking the red cross
 		

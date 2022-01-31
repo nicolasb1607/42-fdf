@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:57:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:33:52 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:35:22 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	handle_keypress(int keysym, t_app *app)
 	if (keysym == XK_s)
 		app->map.pos_y += 20;
 	if (keysym == XK_Up)
-		app->map.zoom += 2;
+		app->map.zoom += 0.2;
 	if (keysym == XK_Down)
-		app->map.zoom -= 2;
+		app->map.zoom -= 0.2;
 	if (keysym == XK_Right)
 		app->map.angle += 0.02;
 	if (keysym == XK_Left)
@@ -61,6 +61,7 @@ int	handle_keypress(int keysym, t_app *app)
 		app->map.deep_level += 2;
 	if(keysym == XK_k)
 		app->map.deep_level -= 2;
+	render(app);
 	return (0);
 }
 

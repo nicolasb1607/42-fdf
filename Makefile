@@ -12,6 +12,7 @@ SRCS = ./main.c \
 	./sources/get_next_line_utils.c \
 	./util/bresenham.c \
 	./util/view_change.c \
+	./util/default_values.c
 	
 INCLUDES = ./includes/
 
