@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:58:14 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/28 14:02:35 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/01/31 11:50:50 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@ int	get_height(char *file)
 {
 	int		fd;
 	int		height;
-	char	*nl;
-
+	int 	bread;
+	char	buff[10000];
+	int		i;
+	
 	fd = open(file, O_RDONLY);
 	height = 0;
-	nl = get_next_line(fd);
-	while (nl)
+	bread = 1;
+	while (bread > 0)
 	{
-		height++;
-		free(nl);
-		nl = get_next_line(fd);
+		bread = read(fd, &buff, 9999);
+		if (bread == 0)
+			break;
+		buff[bread] = '\0';
+		i = -1;
+		while (buff[++i])
+			if (buff[i] == '\n')
+				height++;
 	}
-	free(nl);
 	close(fd);
 	return (height);
 }
@@ -54,7 +60,7 @@ int	*fill_matrix(char *nl, t_app *app)
 
 	i = 0;
 	splitted = ft_split(nl, ' ');
-	line = malloc(sizeof(int) * (app->map.width + 1));
+	line = (int*) malloc(sizeof(int) * (app->map.width + 1));
 	while (i < app->map.width)
 	{
 		line[i] = ft_atoi(splitted[i]);
@@ -74,7 +80,7 @@ void	read_file(char *file, t_app *app)
 	i = 0;
 	app->map.height = get_height(file);
 	app->map.width = get_width(file);
-	app->map.z_val = malloc(sizeof(int *) * (app->map.height + 1));
+	app->map.z_val = (int**) malloc(sizeof(int *) * (app->map.height + 1));
 	fd = open(file, O_RDONLY);
 	while (i < app->map.height)
 	{
