@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:58:14 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/02/01 14:50:47 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/01 15:20:07 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	get_height(char *file)
 	int		i;
 
 	fd = open(file, O_RDONLY);
-	printf("fd heigth= %d\n", fd);
 	height = 0;
 	bread = 1;
 	while (bread > 0)
@@ -46,7 +45,6 @@ int	get_width(char *file)
 	int		width;
 
 	fd = open(file, O_RDONLY);
-	printf("fd get width= %d\n", fd);
 	nl = get_next_line(fd);
 	close(fd);
 	width = ft_wordcount(nl, ' ');
@@ -84,15 +82,11 @@ void	read_file(char *file, t_app *app)
 	i = 0;
 	app->map.height = get_height(file);
 	app->map.width = get_width(file);
-	printf("map height = %d\n", app->map.height);
-	printf("map witdh = %d\n", app->map.width);
 	app->map.z_val = malloc(sizeof(int *) * (app->map.height + 1));
 	fd = open(file, O_RDONLY);
-	printf("fd read file = %d\n", fd);
 	while (i < app->map.height)
 	{
 		nl = get_next_line(fd);
-		printf("nl = %s\n", nl);
 		app->map.z_val[i] = fill_matrix(nl, app);
 		free(nl);
 		i++;
