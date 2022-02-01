@@ -5,124 +5,133 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 19:18:43 by nburat-d         ###   ########.fr       */
+/*   Created: 2022/02/01 14:11:32 by nburat-d          #+#    #+#             */
+/*   Updated: 2022/02/01 14:12:29 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_fdf.h"
+#include "../includes/get_next_line.h"
 
-char	*get_line(char *save, char *line)
+/* 
+** Apres avoir copie la ligne dans LINE(dans la fonction extract),
+** cette fonction redecale tout vers la gauche
+*/
+
+void	ft_restruct_storage(char *fd_storage)
 {
-	int		i;
+	int	i;
+	int	j;
 
 	i = 0;
-	if (ft_strlen(save) == 0 || !save)
-		return (NULL);
-	while (save[i] != '\n' && save[i])
+	j = 0;
+	while (fd_storage[i] && fd_storage[i] != '\n')
 		i++;
-	line = malloc((i + 2) * sizeof(char));
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (save[i] != '\n' && save[i])
+	i++;
+	while (fd_storage[i])
 	{
-		line[i] = save[i];
+		fd_storage[j] = fd_storage[i];
 		i++;
+		j++;
 	}
-	if (save[i] == '\n')
-		line[i++] = '\n';
-	line[i] = '\0';
-	return (line);
+	fd_storage[j] = fd_storage[i];
+	j++;
+	while (fd_storage[j])
+	{
+		fd_storage[j] = '\0';
+		j++;
+	}
 }
 
-char	*not_read_yet(char *save)
-{
-	char	*tmp;
-	int		i;
-	int		j;
+/*
+** Cette extrait la ligne du buffer, remplit line avec le contenu de fd_storage
+** si besoin et le cas echant remplit ft_storage avec le contenu de buffer non
+** utilise
+*/
 
-	i = 0;
-	j = -1;
-	if (ft_strlen(save) == 0)
+int	extract_str(char *fd_storage, char *line, char *buffer)
+{
+	int	i;
+	int	j;
+	int	start;
+
+	i = -1;
+	if (fd_storage[0] != '\0')
 	{
-		free(save);
-		return (NULL);
+		ft_strcat(line, fd_storage);
+		ft_restruct_storage(fd_storage);
 	}
-	while (save[i] != '\n' && save[i])
-		i++;
-	tmp = malloc(sizeof(char) * (ft_strlen(save) - i + 1));
-	if (!tmp)
-		return (NULL);
-	if (save[i] == '\n')
-		i++;
-	while (save[i])
-		tmp[++j] = save[i++];
-	tmp[++j] = '\0';
-	free(save);
-	save = tmp;
-	return (save);
+	start = ft_len(line);
+	if (start != 0)
+		if (line[start - 1] == '\n')
+			return (1);
+	while (buffer[++i] && buffer[i] != '\n')
+		line[start + i] = buffer[i];
+	if (buffer[i] == '\n')
+	{
+		line[start + i] = buffer[i];
+		j = 0;
+		while (buffer[++i])
+			fd_storage[j++] = buffer[i];
+		return (1);
+	}
+	return (0);
 }
 
-char	*read_save(char *save, int fd)
-{
-	char	*buff;
-	int		bytesread;
-	char	*tmp;
+/* Check la presence d'un \n dans la reserve
+** pour savoir si l'on doit faire appel a read
+*/
 
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (NULL);
-	bytesread = 1;
-	while (!ft_strchr(save, '\n') && bytesread > 0)
+int	need_to_read(char *fd_storage)
+{
+	int	i;
+
+	if (!fd_storage)
+		return (1);
+	i = 0;
+	while (fd_storage[i])
 	{
-		bytesread = read(fd, buff, BUFFER_SIZE);
-		if (bytesread == -1 || (bytesread == 0 && !*save))
-		{
-			free(buff);
-			free (save);
+		if (fd_storage[i] == '\n')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+char	*read_line(char *fd_storage, int fd)
+{
+	char	buffer[BUFFER_SIZE + 1];
+	char	*line;
+	int		read_ret;
+	int		line_size;
+	int		end_of_line;
+
+	end_of_line = 0;
+	read_ret = 1;
+	line = NULL;
+	while (read_ret > 0 && !end_of_line)
+	{
+		ft_bzero(buffer, BUFFER_SIZE + 1);
+		if (need_to_read(fd_storage))
+			read_ret = read(fd, buffer, BUFFER_SIZE);
+		line_size = ft_len(fd_storage) + ft_len(buffer) + (ft_len(line) + 1);
+		if (line_size == 1)
 			return (NULL);
-		}
-		buff[bytesread] = '\0';
-		tmp = ft_strjoin(save, buff);
-		free(save);
-		save = tmp;
+		line = ft_realloc(line, sizeof(*line) * line_size);
+		if (!line)
+			return (NULL);
+		end_of_line = extract_str(fd_storage, line, buffer);
 	}
-	free(buff);
-	return (save);
+	return (line);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*save[1024];
+	static char	fd_storage[2048][BUFFER_SIZE + 1];
 	char		*line;
 
-	line = NULL;
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
+	if (fd >= 0 && BUFFER_SIZE > 0)
+		line = read_line(fd_storage[fd], fd);
+	else
 		return (NULL);
-	if (!save[fd])
-		save[fd] = ft_strdup("");
-	save[fd] = read_save(save[fd], fd);
-	line = get_line(save[fd], line);
-	save[fd] = not_read_yet(save[fd]);
 	return (line);
 }
-
-/*
-#include <stdio.h>
-#include <fcntl.h>
-
-int main()
-{
-
-	int fd;
-	char *str;
-
-	fd = open("./text.txt", O_RDONLY);
-	do
-	{
-		str = get_next_line(fd);
-		printf("%s", str);
-		free(str);
-	} while (str);
-} */

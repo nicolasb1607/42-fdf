@@ -6,13 +6,13 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:57:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 18:35:22 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:36:36 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fdf.h"
 
-void free_map(int **map)
+void	free_map(int **map)
 {
 	int	i;
 
@@ -37,7 +37,23 @@ int	ft_close_program(t_app *app)
 	exit (0);
 }
 
-int	handle_keypress(int keysym, t_app *app)
+int	handle_keypress2(int keysym, t_app *app)
+{
+	if (keysym == XK_Right)
+		app->map.angle += 0.02;
+	if (keysym == XK_Left)
+		app->map.angle -= 0.02;
+	if (keysym == XK_i)
+		app->map.deep_level += 1;
+	if (keysym == XK_k)
+		app->map.deep_level -= 1;
+	if (keysym == XK_p)
+		app->map.iso_view *= -1;
+	render(app);
+	return (0);
+}
+
+int	handle_keypress1(int keysym, t_app *app)
 {
 	if (keysym == XK_Escape)
 		ft_close_program(app);
@@ -53,15 +69,7 @@ int	handle_keypress(int keysym, t_app *app)
 		app->map.zoom += 0.2;
 	if (keysym == XK_Down)
 		app->map.zoom -= 0.2;
-	if (keysym == XK_Right)
-		app->map.angle += 0.02;
-	if (keysym == XK_Left)
-		app->map.angle -= 0.02;
-	if(keysym == XK_i)
-		app->map.deep_level += 2;
-	if(keysym == XK_k)
-		app->map.deep_level -= 2;
-	render(app);
+	handle_keypress2(keysym, app);
 	return (0);
 }
 

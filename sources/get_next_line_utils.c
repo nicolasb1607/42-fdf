@@ -5,85 +5,93 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 15:49:44 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/31 19:18:52 by nburat-d         ###   ########.fr       */
+/*   Created: 2022/02/01 14:11:27 by nburat-d          #+#    #+#             */
+/*   Updated: 2022/02/01 14:12:18 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_fdf.h"
+#include "../includes/get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_len(const char *str)
 {
-	int	len;
+	int	length;
 
-	len = 0;
-	if (!s || s[0] == '\0')
-		return (0);
-	while (s[len])
-		len++;
-	return (len);
+	length = 0;
+	if (str)
+	{
+		while (str[length])
+		{
+			length++;
+		}
+	}
+	return (length);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_realloc(char *str, int size)
 {
-	int		i;
-	char	*s1;
+	char	*new_str;
+
+	new_str = malloc(sizeof(*new_str) * size + 1);
+	ft_bzero(new_str, size);
+	if (str)
+	{
+		ft_strlcpy(new_str, str, size);
+		free(str);
+	}
+	return (new_str);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	src_length;
 
 	i = 0;
-	s1 = (char *)s;
-	if (!s)
-		return (NULL);
-	while (s[i])
+	src_length = 0;
+	while (src[src_length])
+		src_length++;
+	while (src[i] && (i < size - 1))
 	{
-		if (s1[i] == (unsigned char) c)
-			return (&s1[i]);
+		dst[i] = src[i];
 		i++;
 	}
-	if (s1[i] == (unsigned char) c)
-		return (&s1[i]);
-	return (NULL);
+	dst[i] = '\0';
+	return (src_length);
 }
 
-char	*ft_strdup(const char *s)
+/* Retourne le point d'arret de src*/
+int	ft_strcat(char *dest, char *src)
 {
-	int		len;
-	int		i;
-	char	*dup;
+	int	i;
+	int	j;
 
-	if (!s)
-		return (NULL);
-	len = ft_strlen(s);
 	i = 0;
-	dup = malloc((len + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
-	while (s[i] != '\0')
-	{
-		dup[i] = s[i];
+	j = 0;
+	while (dest[i])
 		i++;
+	while (src[j] && src[j] != '\n')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	if (src[j] && src[j] == '\n')
+		dest[i] = src[j];
+	i++;
+	dest[i] = '\0';
+	return (j);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+void	ft_bzero(void *s, size_t n)
 {
-	int		catlen;
-	char	*strcat;
-	int		i;
-	int		j;
+	size_t			i;
+	unsigned char	*p;
 
-	i = -1;
-	j = -1;
-	catlen = ft_strlen(s1) + ft_strlen(s2);
-	strcat = malloc((catlen + 1) * sizeof(char));
-	if (!strcat)
-		return (NULL);
-	while (s1[++i])
-		strcat[++j] = s1[i];
-	i = -1;
-	while (s2[++i])
-		strcat[++j] = s2[i];
-	strcat[++j] = '\0';
-	return (strcat);
+	p = s;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = '\0';
+		i++;
+	}
 }

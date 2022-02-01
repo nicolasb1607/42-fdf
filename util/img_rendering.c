@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:54:22 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/01/26 17:55:18 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:46:58 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	render_background(t_img *img, int color)
 	int	j;
 
 	i = 0;
-	while (i < WINDOW_HEIGHT)
+	while (i < W_HEIGHT)
 	{
 		j = 0;
-		while (j < WINDOW_WIDTH)
+		while (j < W_WIDTH)
 		{
 			img_pix_put(img, j++, i, color);
 		}
