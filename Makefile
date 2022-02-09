@@ -21,13 +21,13 @@ OBJS = ${SRCS:.c=.o}
 all : MINILIBX $(EXEC) 
 
 MINILIBX :
-	make -C ./minilibx/ && mv ./minilibx/libmlx_Linux.a ./sources/
+	make -C ./minilibx/
 
 $(EXEC) : $(OBJS)
-	$(CC) $(CFLAGS) -O3 $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -O3 $^ -o $@ -L ./minilibx -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES)
 
 .o : .c 
-	$(CC) $(CFLAGS) -O3-c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -O3-c $< -o $@ -L ./minilibx -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES)
 
 clean : 
 	rm -f $(OBJS)
