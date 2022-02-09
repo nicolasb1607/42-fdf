@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 13:52:27 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/02/01 14:42:27 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:06:21 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define FT_FDF_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include "mlx.h"
 # include <X11/keysym.h> 
 # include "./get_next_line.h"
 # include <fcntl.h>
 # include <math.h>
+# include <unistd.h>
 
 # define W_WIDTH 1920
 # define W_HEIGHT 1080
@@ -102,5 +102,7 @@ char	**ft_split(char const *s, char c);
 char	**free_tab(char **tab);
 int		ft_wordcount(char const *s, char c);
 int		ft_atoi(const char *nptr);
+void	ft_putstr(char *str);
+
 
 #endif

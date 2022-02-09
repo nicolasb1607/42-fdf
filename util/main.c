@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:41:17 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/02/09 18:42:01 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:46:39 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		read_file(av[1], &app);
 		app.init = mlx_init();
 		if (app.init == NULL)
 			return (0);
@@ -43,6 +42,7 @@ int	main(int ac, char **av)
 		app.img.mlx_img = mlx_new_image(app.init, W_WIDTH, W_HEIGHT);
 		app.img.addr = mlx_get_data_addr(app.img.mlx_img, &app.img.bpp,
 				&app.img.line_len, &app.img.endian);
+		read_file(av[1], &app);
 		app_initialization(&app);
 		mlx_key_hook(app.win, &handle_keypress1, &app);
 		mlx_hook(app.win, 17, 0, &ft_close_program, &app);

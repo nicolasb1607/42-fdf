@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:57:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/02/01 14:36:36 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:10:25 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	free_map(int **map)
 
 int	ft_close_program(t_app *app)
 {
-	printf("Exiting program\n");
+	ft_putstr("Exiting program\n");
 	mlx_destroy_image(app->init, app->img.mlx_img);
 	mlx_destroy_window(app->init, app->win);
 	mlx_destroy_display(app->init);
@@ -70,13 +70,5 @@ int	handle_keypress1(int keysym, t_app *app)
 	if (keysym == XK_Down)
 		app->map.zoom -= 0.2;
 	handle_keypress2(keysym, app);
-	return (0);
-}
-
-int	ft_get_mouse_spot(int button, int x, int y, t_point *point)
-{
-	point->x = x;
-	point->y = y;
-	printf("the button is pressed : %d, %d, %d\n", button, point->x, point->y);
 	return (0);
 }

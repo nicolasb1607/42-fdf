@@ -6,11 +6,20 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:58:14 by nburat-d          #+#    #+#             */
-/*   Updated: 2022/02/01 15:20:07 by nburat-d         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:07:18 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fdf.h"
+
+void	check_error(int bread)
+{
+	if (bread == -1)
+	{
+		ft_putstr("Error cannot read the file\n");
+		exit(1);
+	}
+}
 
 int	get_height(char *file)
 {
@@ -26,6 +35,7 @@ int	get_height(char *file)
 	while (bread > 0)
 	{
 		bread = read(fd, &buff, 9999);
+		check_error(bread);
 		if (bread == 0)
 			break ;
 		buff[bread] = '\0';
