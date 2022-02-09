@@ -31,7 +31,7 @@ $(EXEC) : $(OBJS)
 
 clean : 
 	rm -f $(OBJS)
-	rm -f ./sources/libmlx_Linux.a ./minilibx/libmlx.a
+	make clean -C ./minilibx
 
 fclean : clean
 	rm -f $(EXEC)
