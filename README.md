@@ -4,6 +4,8 @@
 
 Welcome to the FDF Wireframe Model project! In this project, you will create a basic computer graphics project that involves creating a wireframe model representation of a 3D landscape. This project will introduce you to graphics programming and working with the MiniLibX, the school graphical library. Your task is to connect various points in 3D space with line segments to create a wireframe model of a landscape.
 
+![alt text](https://github.com/nicolasb1607/42-fdf/blob/master/Screenshot%20from%202023-09-19%2015-03-21.png)
+
 ## Common Instructions
 
 Before we dive into the project details, let's review some common instructions that apply to this project:
