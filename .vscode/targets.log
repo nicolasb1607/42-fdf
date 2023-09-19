@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
- 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'main.o', needed by 'fdf'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jan 12 12:30:36 2022
+# Make data base, printed on Tue Sep 19 15:02:50 2023
 
 # Variables
 
@@ -21,17 +19,17 @@ GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
-SNAP_INSTANCE_KEY = 
+PNPM_HOME = /home/nicolas/.local/share/pnpm
 # environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f721450f-f491-4ad0-a9de-10ecf0eadeae.sock
+SNAP_LAUNCHER_ARCH_TRIPLET = x86_64-linux-gnu
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
 LC_NUMERIC = fr_FR.UTF-8
 # environment
-VSCODE_CWD = /home/nicolas
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# environment
+VSCODE_CWD = /home/nicolas/Documents/github/42-fdf
 # environment
 LC_ADDRESS = fr_FR.UTF-8
 # default
@@ -43,47 +41,47 @@ QT_ACCESSIBILITY = 1
 # environment
 SNAP_INSTANCE_NAME = code
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/85/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/140/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/nicolas/Documents/github/fdf
+PWD = /home/nicolas/Documents/github/42-fdf
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-XDG_DATA_DIRS = /usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+XDG_DATA_DIRS = /home/nicolas/snap/code/140/.local/share:/home/nicolas/snap/code/140:/snap/code/140/usr/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/nicolas
+SNAP_EUID = 1000
+# environment
+OLDPWD = /home/nicolas/Documents/github
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/abd2f3db4bdb28f9e95536dfa84d8479f1eb312d
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.KXFQF1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.U66AB2
 # default
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+GNOME_TERMINAL_SERVICE = :1.126
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/nicolas/Documents/github/fdf
+CURDIR := /home/nicolas/Documents/github/42-fdf
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 4)
-SRCS = ./main.c ./util/win_ctrl.c ./util/draw.c ./util/img_rendering.c ./util/read_file.c ./sources/ft_split.c ./sources/get_next_line.c ./sources/get_next_line_utils.c 
+SRCS = ./main.c ./util/win_ctrl.c ./util/draw.c ./util/img_rendering.c ./util/read_file.c ./sources/ft_split.c ./sources/ft_atoi.c ./sources/get_next_line.c ./sources/get_next_line_utils.c ./util/bresenham.c ./util/view_change.c ./util/default_values.c ./util/ft_putstr.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -97,31 +95,23 @@ WAYLAND_DISPLAY = wayland-0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=cb0b9051-a21a-4c1d-b066-7b1e0c461400&iid=cb0b9051-a21a-4c1d-b066-7b1e0c461400&sid=cb0b9051-a21a-4c1d-b066-7b1e0c461400","uploadToServer":true}
-# environment
 XDG_SESSION_DESKTOP = ubuntu
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
-# environment
-SNAP_REEXEC = 
 # automatic
 @F = $(notdir $@)
 # environment
 ZSH = /home/nicolas/.oh-my-zsh
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 23026
+VSCODE_PID = 9471
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
-# makefile (from 'Makefile', line 14)
+# makefile (from 'Makefile', line 18)
 INCLUDES = ./includes/
 # environment
-SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2064,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2064
+SESSION_MANAGER = local/nicolas-XPS:@/tmp/.ICE-unix/3022,unix/nicolas-XPS:/tmp/.ICE-unix/3022
 # automatic
 *F = $(notdir $*)
 # environment
@@ -133,13 +123,13 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # makefile (from 'Makefile', line 3)
 EXEC = fdf
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
-# environment
-BREAKPAD_DUMP_LOCATION = /home/nicolas/.config/Code/exthost Crash Reports
+VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 16)
+# makefile (from 'Makefile', line 20)
 OBJS = ${SRCS:.c=.o}
+# environment
+GTK_PATH = /snap/code/140/usr/lib/x86_64-linux-gnu/gtk-3.0
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
@@ -149,17 +139,17 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+SHLVL = 1
 # environment
-SHLVL = 0
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c25bdc07_0655_421b_807c_e7b40d939117
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-SNAP_COOKIE = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
+SNAP_COOKIE = RP0eoaNK7CDrVY8bZ08Jy8LCJJDbeuA85Sx0ctn4XElW9zD6wA2T
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+PATH = /home/nicolas/.local/share/pnpm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # default
 MAKEFILES := 
 # environment
@@ -171,15 +161,11 @@ SNAP_USER_COMMON = /home/nicolas/snap/code/common
 # environment
 LC_TIME = fr_FR.UTF-8
 # environment
-SNAP = /snap/code/85
+SNAP = /snap/code/140
 # environment
-INVOCATION_ID = 29b0859f071648efba3e192267a4bc8d
-# environment
-SNAP_REVISION = 85
+SNAP_REVISION = 140
 # environment
 SNAP_REAL_HOME = /home/nicolas
-# environment
-VSCODE_LOG_NATIVE = false
 # environment
 USERNAME = nicolas
 # environment
@@ -189,9 +175,11 @@ LC_TELEPHONE = fr_FR.UTF-8
 # automatic
 ?F = $(notdir $?)
 # environment
+GTK_IM_MODULE_FILE = /home/nicolas/snap/code/common/.cache/immodules/immodules.cache
+# environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
-LS_COLORS = 
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # automatic
 +F = $(notdir $+)
 # environment
@@ -200,18 +188,20 @@ LESS = -R
 DESKTOP_SESSION = ubuntu
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+LOCPATH = /snap/code/140/usr/lib/locale
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-LOGNAME = nicolas
+XDG_DATA_DIRS_VSCODE_SNAP_ORIG = /usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+LOGNAME = nicolas
 # environment
 SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2082
+SYSTEMD_EXEC_PID = 3223
 # environment
 DISPLAY = :0
 # environment
@@ -221,21 +211,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-DISABLE_WAYLAND = 1
+SNAP_DATA = /var/snap/code/140
 # environment
-SNAP_DATA = /var/snap/code/85
-# environment
-SNAP_CONTEXT = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
-# environment
-MANAGERPID = 1947
+SNAP_CONTEXT = RP0eoaNK7CDrVY8bZ08Jy8LCJJDbeuA85Sx0ctn4XElW9zD6wA2T
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 22983
-# environment
 PAGER = less
-# environment
-_ = /snap/code/85/usr/share/code/code
 # environment
 LC_PAPER = fr_FR.UTF-8
 # environment
@@ -243,13 +225,17 @@ XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'Makefile', line 2)
 CFLAGS = -Wall -Wextra -Werror
 # environment
+SNAP_UID = 1000
+# environment
+COLORTERM = truecolor
+# environment
 GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:33505
+GIO_MODULE_DIR = /home/nicolas/snap/code/common/.cache/gio-modules
 # environment
 XDG_SESSION_CLASS = user
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/nicolas
 # environment
@@ -257,17 +243,21 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-0ed59228-1.63.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-0ed59228-1.82-main.sock
+# environment
+TERM = xterm-256color
+# environment
+GTK_EXE_PREFIX = /snap/code/140/usr
 # environment
 SNAP_NAME = code
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/85/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /home/nicolas/snap/code/140/.local/share/glib-2.0/schemas
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
 # environment
-SNAP_VERSION = 899d46d8
+SNAP_VERSION = abd2f3db
 # default
 SUFFIXES := 
 # environment
@@ -275,14 +265,15 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
+VTE_VERSION = 6800
+# environment
 SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 1)
 CC = gcc
 # environment
- 
-SNAP_USER_DATA = /home/nicolas/snap/code/85
+SNAP_USER_DATA = /home/nicolas/snap/code/140
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -292,17 +283,18 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=139/1024=14%, Rehash=0, Collisions=11/173=6%
+# Load=136/1024=13%, Rehash=0, Collisions=16/173=9%
 
 # Pattern-specific Variable Values
+ 
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 66309, inode 2755249): 11 files, no impossibilities.
+# . (device 66311, inode 14435876): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -317,6 +309,39 @@ sources/get_next_line_utils.o:
 #  File has not been updated.
 
 # Not a target:
+sources/ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+MINILIBX:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := MINILIBX
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from 'Makefile', line 25):
+	make -C ./minilibx/
+
+# Not a target:
 sources/get_next_line.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -325,7 +350,7 @@ sources/get_next_line.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-11 01:07:55.191222817
+#  Last modified 2023-09-19 14:58:32.680074077
 #  File has been updated.
 #  Successfully updated.
 
@@ -335,13 +360,20 @@ util/read_file.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+util/default_values.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
+#  recipe to execute (from 'Makefile', line 34):
 	rm -f $(OBJS)
+	make clean -C ./minilibx
 
 # Not a target:
 sources/ft_split.o:
@@ -362,17 +394,23 @@ re: fclean all
 #  File has not been updated.
 
 # Not a target:
+util/ft_putstr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 util/win_ctrl.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-fdf: main.o util/win_ctrl.o util/draw.o util/img_rendering.o util/read_file.o sources/ft_split.o sources/get_next_line.o sources/get_next_line_utils.o
+fdf: main.o util/win_ctrl.o util/draw.o util/img_rendering.o util/read_file.o sources/ft_split.o sources/ft_atoi.o sources/get_next_line.o sources/get_next_line_utils.o util/bresenham.o util/view_change.o util/default_values.o util/ft_putstr.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	$(CC) $(CFLAGS)  $^ -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) -g
+#  recipe to execute (from 'Makefile', line 28):
+	$(CC) $(CFLAGS) -O3 $^ -o $@ -L ./minilibx -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES)
 
 # Not a target:
 .DEFAULT:
@@ -380,33 +418,48 @@ fdf: main.o util/win_ctrl.o util/draw.o util/img_rendering.o util/read_file.o so
 #  Modification time never checked.
 #  File has not been updated.
 
-all: fdf
+# Not a target:
+util/bresenham.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: MINILIBX fdf
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 30):
+#  recipe to execute (from 'Makefile', line 38):
 	rm -f $(EXEC)
 
 # Not a target:
+util/view_change.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 main.o:
-#  Implicit rule search has been done.
-#  File does not exist.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 .o: .c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-	$(CC) $(CFLAGS) -c $< -o $@ -L ./sources -lmlx_Linux -lXext -lX11 -I $(INCLUDES) -g
+#  recipe to execute (from 'Makefile', line 31):
+	$(CC) $(CFLAGS) -O3-c $< -o $@ -L ./minilibx -lmlx_Linux -lXext -lX11 -lm -I $(INCLUDES)
 
 # Not a target:
 .c:
@@ -426,25 +479,31 @@ util/draw.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .PHONY: all clean fclean re spe
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/52=0%
+# Load=26/1024=3%, Rehash=0, Collisions=4/66=6%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 315 B / avg = 9 B
-# current buf: size = 8162 B / used = 315 B / count = 32 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 39 / storage = 420 B / avg = 10 B
+# current buf: size = 8162 B / used = 420 B / count = 39 / avg = 10 B
 
-# strcache performance: lookups = 56 / hit rate = 42%
+# strcache performance: lookups = 66 / hit rate = 40%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=0/56=0%
-# Finished Make data base on Wed Jan 12 12:30:36 2022
+# Load=39/8192=0%, Rehash=0, Collisions=0/66=0%
+# Finished Make data base on Tue Sep 19 15:02:50 2023
 
  
